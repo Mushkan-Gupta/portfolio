@@ -181,18 +181,29 @@ CORE BEHAVIOR RULES:
 ${knowledge}
 === KNOWLEDGE BASE END ===`;
 
-  // 6. Check for GEMINI_API_KEY
+  // 6. Check for GEMINI_API_KEY and GEMINI_MODEL
   const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    // Graceful response for local testing prior to adding the key
+  const isApiKeyDefined = Boolean(apiKey);
+  const model = process.env.GEMINI_MODEL;
+
+  if (!isApiKeyDefined || !model) {
+    if (!isApiKeyDefined) {
+      console.error('GEMINI_API_KEY is not defined in environment variables.');
+    }
+    if (!model) {
+      console.error('GEMINI_MODEL is not defined in environment variables.');
+    }
+    // Graceful response for local testing prior to adding the key or model
     return res.status(200).json({
-      reply: "Hello! I am ready to answer questions about Mushkan. To activate live Gemini responses, please set your GEMINI_API_KEY in your .env file or Vercel Environment Variables. In the meantime: Mushkan Gupta is a final-year B.Tech CSE student (GPA 3.48) in Vadodara looking for a remote data internship. Reach her at musugu2005@gmail.com."
+      reply: "Hello! I am ready to answer questions about Mushkan. To activate live Gemini responses, please set your GEMINI_API_KEY and GEMINI_MODEL in your .env file or Vercel Environment Variables. In the meantime: Mushkan Gupta is a final-year B.Tech CSE student (GPA 3.48) in Vadodara looking for a remote data internship. Reach her at musugu2005@gmail.com."
     });
   }
 
   // 7. Call Google Gemini API
-  const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+
+  let response;
+  let responseBodyText = '';
 
   try {
     const payload = {
@@ -206,32 +217,65 @@ ${knowledge}
       }
     };
 
-    const response = await fetch(apiUrl, {
+    response = await fetch(apiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
+    responseBodyText = await response.text();
+
     if (!response.ok) {
-      const errText = await response.text();
-      console.error('Gemini API returned error status:', response.status, errText);
+      console.error('Gemini API returned error response:', {
+        status: response.status,
+        body: responseBodyText,
+        model: model,
+        hasApiKey: isApiKeyDefined
+      });
       return res.status(502).json({
         error: 'The AI assistant encountered a temporary issue connecting to Gemini. Please try again shortly or reach out to musugu2005@gmail.com.'
       });
     }
 
-    const data = await response.json();
+    let data;
+    try {
+      data = JSON.parse(responseBodyText);
+    } catch (parseErr) {
+      console.error('Failed to parse Gemini response as JSON:', {
+        status: response.status,
+        body: responseBodyText,
+        model: model,
+        hasApiKey: isApiKeyDefined,
+        error: parseErr.message || parseErr
+      });
+      return res.status(502).json({
+        error: 'The AI assistant encountered a temporary issue connecting to Gemini. Please try again shortly or reach out to musugu2005@gmail.com.'
+      });
+    }
+
     const replyText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!replyText) {
+      console.error('Gemini API response did not contain candidates text:', {
+        status: response.status,
+        body: responseBodyText,
+        model: model,
+        hasApiKey: isApiKeyDefined
+      });
       return res.status(200).json({
         reply: "I couldn't generate a response just now. Please feel free to email Mushkan at musugu2005@gmail.com!"
       });
     }
 
     return res.status(200).json({ reply: replyText.trim() });
-  } catch (error) {
-    console.error('Error invoking Gemini API:', error);
+  } catch (error) { 
+    console.error('Error invoking Gemini API:', {
+      status: response ? response.status : null,
+      body: responseBodyText || null,
+      model: model,
+      hasApiKey: isApiKeyDefined,
+      error: error.message || error
+    });
     return res.status(500).json({
       error: 'An unexpected server error occurred. Please try again later.'
     });
