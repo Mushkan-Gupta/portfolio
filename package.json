@@ -5,6 +5,8 @@
   "description": "Portfolio of Mushkan Gupta featuring interactive projects, verified certificates, and an AI agent.",
   "scripts": {
     "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.1.0"
   }
 }
-
