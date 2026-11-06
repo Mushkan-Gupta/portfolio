@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/chat",
+      "destination": "/api/chat.js"
+    }
+  ],
+  "functions": {
+    "api/chat.js": {
+      "includeFiles": "knowledge/**"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "mushkan-gupta-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Mushkan Gupta featuring interactive projects, verified certificates, and an AI agent.",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
+
