@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div id="site-wrapper">
     <!-- Top dynamic scroll progress bar -->
     <div id="scroll-progress"></div>
 
@@ -31,7 +32,8 @@
                 <span>Mushkan Gupta</span>
             </a>
 
-            <nav aria-label="Main Navigation">
+            <!-- Desktop Nav Menu -->
+            <nav class="nav-menu-wrap" aria-label="Main Navigation">
                 <ul class="nav-menu">
                     <li><a href="#about" class="active">About</a></li>
                     <li><a href="#projects">Live Projects</a></li>
@@ -64,8 +66,8 @@
                     </svg>
                 </button>
 
-                <a href="F:\potfolio\certificates\actual_Mushkan_Gupta_Resume.pdf" target="_blank"
-                    class="btn btn-secondary btn-sm" title="View or download verified PDF resume">
+                <a href="certificates/actual_Mushkan_Gupta_Resume.pdf" target="_blank"
+                    class="btn btn-secondary btn-sm nav-desktop-action" title="View or download verified PDF resume">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                         <polyline points="14 2 14 8 20 8"></polyline>
@@ -76,6 +78,45 @@
                     <span>Resume</span>
                 </a>
 
+                <a href="#contact" class="btn btn-primary btn-sm nav-desktop-action">Let’s Talk</a>
+
+                <!-- Hamburger Button (Visible below 1100px) -->
+                <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-menu">
+                    <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown (Below 1100px) -->
+        <div class="mobile-nav-dropdown" id="mobile-nav-menu" aria-hidden="true">
+            <ul class="mobile-nav-links">
+                <li><a href="#about" class="mobile-nav-link active">About</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Live Projects</a></li>
+                <li><a href="#sql-sandbox" class="mobile-nav-link">SQL Sandbox</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                <li><a href="#credentials" class="mobile-nav-link">Certificates</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <a href="certificates/actual_Mushkan_Gupta_Resume.pdf" target="_blank"
+                    class="btn btn-secondary btn-sm" title="View or download verified PDF resume">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Resume</span>
+                </a>
                 <a href="#contact" class="btn btn-primary btn-sm">Let’s Talk</a>
             </div>
         </div>
@@ -255,11 +296,11 @@
                 </p>
             </div>
 
-            <div class="projects-stack">
-                <!-- PROJECT 1: TVS RAJ AUTOMOBILES -->
-                <article class="project-card">
-                    <div class="project-content">
-                        <div>
+                        <div class="deck-container projects-deck-container" id="projects-deck" aria-label="Featured Projects Deck">
+                <div class="deck-cards">
+                    <!-- PROJECT 1: TVS RAJ AUTOMOBILES -->
+                    <article class="project-card deck-card" data-deck-type="project" data-deck-index="0">
+                        <div class="deck-card-inner">
                             <div class="project-pill-row">
                                 <span class="pill-badge pill-emerald">Live on Vercel</span>
                                 <span class="pill-badge pill-sky">Solo Client Project</span>
@@ -267,7 +308,7 @@
                             </div>
 
                             <h3 class="project-title">TVS Raj Automobiles</h3>
-                            <div class="project-role-tag">Full-Stack Dealership Platform · 2025 · Lahan, Nepal</div>
+                            <div class="project-role-tag">Full-Stack Dealership Platform · Lahan, Nepal</div>
 
                             <p class="project-summary">
                                 Built single-handedly for a bustling motorcycle dealership in Lahan, Nepal. Transformed
@@ -275,19 +316,9 @@
                             </p>
 
                             <ul class="project-bullets">
-                                <li>
-                                    <strong>Multi-Role RBAC:</strong> Engineered isolated views for public customer
-                                    inquiries, employee inventory & sales intake, and owner-level revenue summaries.
-                                </li>
-                                <li>
-                                    <strong>End-to-End Architecture:</strong> Designed the normalized PostgreSQL schema
-                                    on Supabase, implemented Row Level Security (RLS) policies, and crafted a responsive
-                                    React + Tailwind interface.
-                                </li>
-                                <li>
-                                    <strong>Business Impact:</strong> Replaced scattered physical ledgers with real-time
-                                    stock counts and instant customer inquiry tracking.
-                                </li>
+                                <li><strong>Multi-Role RBAC:</strong> Engineered isolated views for public customer inquiries, employee inventory & sales intake, and owner-level revenue summaries.</li>
+                                <li><strong>End-to-End Architecture:</strong> Designed normalized PostgreSQL schema on Supabase, implemented Row Level Security (RLS) policies, and crafted a responsive React interface.</li>
+                                <li><strong>Business Impact:</strong> Replaced scattered physical ledgers with real-time stock counts and instant customer inquiry tracking.</li>
                             </ul>
 
                             <div class="tech-pill-list">
@@ -299,114 +330,11 @@
                                 <span class="tech-pill">Vercel</span>
                             </div>
                         </div>
+                    </article>
 
-                        <div class="project-cta-row">
-                            <a href="https://tvs-raj-automobiles.vercel.app" target="_blank" rel="noopener"
-                                class="btn btn-primary">
-                                <span>Launch Live Site</span>
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/Mushkan-Gupta/tvs-raj-automobiles" target="_blank"
-                                rel="noopener" class="btn btn-secondary">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                <span>View GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Browser Frame Component -->
-                    <div class="project-visual">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots"><span></span><span></span><span></span></div>
-                                <div class="browser-address">tvs-raj-automobiles.vercel.app</div>
-                                <div class="browser-tabs">
-                                    <button class="tab-btn active" onclick="switchTab('tvs', 'preview')">Live
-                                        Frame</button>
-                                    <button class="tab-btn" onclick="switchTab('tvs', 'arch')">RBAC Flow</button>
-                                </div>
-                            </div>
-
-                            <!-- Tab 1: Live Web Frame -->
-                            <div class="tab-content active" id="tvs-tab-preview">
-                                <div class="live-frame-container">
-                                    <iframe class="live-frame" src="https://tvs-raj-automobiles.vercel.app"
-                                        title="TVS Raj Automobiles Preview" loading="lazy"></iframe>
-                                </div>
-                                <div class="frame-fallback-note">
-                                    <span>Interactive preview running live on Vercel</span>
-                                    <a href="https://tvs-raj-automobiles.vercel.app" target="_blank" rel="noopener"
-                                        class="frame-link">Open full window ↗</a>
-                                </div>
-                            </div>
-
-                            <!-- Tab 2: Architecture & RBAC Flow -->
-                            <div class="tab-content" id="tvs-tab-arch">
-                                <div class="arch-view">
-                                    <div class="arch-flow-node">
-                                        <div class="node-icon">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                <circle cx="9" cy="7" r="4"></circle>
-                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="node-details">
-                                            <h5>1. Public Inquiries Portal</h5>
-                                            <p>Customers browse TVS motorcycles, compare models, and submit inquiries
-                                                directly into the Supabase database without requiring authentication.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="arch-flow-node">
-                                        <div class="node-icon">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <rect width="20" height="14" x="2" y="3" rx="2"></rect>
-                                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                                            </svg>
-                                        </div>
-                                        <div class="node-details">
-                                            <h5>2. Staff Inventory & Sales Desk</h5>
-                                            <p>Protected employee dashboard for showroom staff to update vehicle stock
-                                                statuses, track customer follow-ups, and register newly completed sales.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="arch-flow-node">
-                                        <div class="node-icon">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="node-details">
-                                            <h5>3. Owner / Admin Financial Ledger</h5>
-                                            <p>Complete historical records, stock valuation metrics, and role management
-                                                secured via PostgreSQL Row Level Security (RLS).</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJECT 2: MINDEASE (AI DEPRESSION DETECTOR) -->
-                <article class="project-card reversed">
-                    <div class="project-content">
-                        <div>
+                    <!-- PROJECT 2: MINDEASE -->
+                    <article class="project-card reversed deck-card" data-deck-type="project" data-deck-index="1">
+                        <div class="deck-card-inner">
                             <div class="project-pill-row">
                                 <span class="pill-badge pill-emerald">Live on Render</span>
                                 <span class="pill-badge pill-sky">IEEE Team Project</span>
@@ -414,29 +342,17 @@
                             </div>
 
                             <h3 class="project-title">MindEase</h3>
-                            <div class="project-role-tag">Team Lead · Backend & ML Architecture · Aug 2025</div>
+                            <div class="project-role-tag">Team Lead · Backend & ML Architecture</div>
 
                             <p class="project-summary">
-                                A mental health journaling tool that analyzes user-written reflections with an NLP
-                                classification pipeline to provide early risk assessment (Low, Moderate, High),
-                                confidence scoring, and crisis intervention.
+                                A mental health journaling tool that analyzes user-written text for depression and self-harm
+                                risk indicators. Guided an 8-person engineering team to an IEEE publication.
                             </p>
 
                             <ul class="project-bullets">
-                                <li>
-                                    <strong>Model & Pipeline:</strong> Trained a text classifier using scikit-learn
-                                    (TF-IDF vectorizer + Logistic Regression) blended with a high-priority safety
-                                    heuristic keyword override for emergency distress terms.
-                                </li>
-                                <li>
-                                    <strong>Production REST API:</strong> Owned and delivered the Flask backend,
-                                    creating an authenticated real-time <code>/predict</code> endpoint with serialized
-                                    model inference.
-                                </li>
-                                <li>
-                                    <strong>Privacy & Support:</strong> Architected anonymous journaling and
-                                    confidential peer-support connection matching.
-                                </li>
+                                <li><strong>Dual-Engine Classification:</strong> Implemented scikit-learn TF-IDF + Logistic Regression pipeline achieving high classification recall on mental-health forum datasets.</li>
+                                <li><strong>Real-Time Inference API:</strong> Containerized Python Flask backend on Render, delivering sub-100ms inference times with defensive input sanitization.</li>
+                                <li><strong>IEEE Documentation:</strong> Authored system architecture and empirical validation sections for our published IEEE conference submission.</li>
                             </ul>
 
                             <div class="tech-pill-list">
@@ -448,199 +364,115 @@
                                 <span class="tech-pill">Render</span>
                             </div>
                         </div>
+                    </article>
 
-                        <div class="project-cta-row">
-                            <a href="https://ai-depression-detector.onrender.com" target="_blank" rel="noopener"
-                                class="btn btn-primary">
-                                <span>Launch Live App</span>
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/Mushkan-Gupta/ai-depression-detector" target="_blank"
-                                rel="noopener" class="btn btn-secondary">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                <span>View GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Browser Frame Component with Live ML Simulator -->
-                    <div class="project-visual">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots"><span></span><span></span><span></span></div>
-                                <div class="browser-address">ai-depression-detector.onrender.com</div>
-                                <div class="browser-tabs">
-                                    <button class="tab-btn active" onclick="switchTab('mindease', 'sim')">Test ML
-                                        Logic</button>
-                                    <button class="tab-btn" onclick="switchTab('mindease', 'live')">Live Web</button>
-                                </div>
+                    <!-- PROJECT 3: SAHELI -->
+                    <article class="project-card deck-card" data-deck-type="project" data-deck-index="2">
+                        <div class="deck-card-inner">
+                            <div class="project-pill-row">
+                                <span class="pill-badge pill-emerald">Hackathon Project</span>
+                                <span class="pill-badge pill-sky">Agentic AI</span>
+                                <span class="pill-badge pill-amber">Zero-Cost Stack</span>
                             </div>
 
-                            <!-- Tab 1: Interactive ML Simulator (Directly Demonstrates Skill) -->
-                            <div class="tab-content active" id="mindease-tab-sim">
-                                <div class="simulator-panel">
-                                    <div class="sim-header">
-                                        <h4>
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                                            </svg>
-                                            Interactive NLP Classifier Demo
-                                        </h4>
-                                        <span class="sim-badge">TF-IDF + LogReg Sim</span>
-                                    </div>
+                            <h3 class="project-title">Saheli</h3>
+                            <div class="project-role-tag">ScriptedBy{Her} 2.0 Hackathon · Multilingual Vernacular Assistant</div>
 
-                                    <div>
-                                        <div class="sim-samples-label">Click a preset sample or type your own journal
-                                            entry:</div>
-                                        <div class="sim-presets">
-                                            <button class="preset-btn" onclick="runSimPreset('positive')">
-                                                🟢 "Felt energetic today, completed my coding assignment and cooked
-                                                dinner with family."
-                                            </button>
-                                            <button class="preset-btn" onclick="runSimPreset('moderate')">
-                                                🟡 "Exam stress is really piling up and I'm feeling constantly anxious
-                                                about deadlines."
-                                            </button>
-                                            <button class="preset-btn" onclick="runSimPreset('high')">
-                                                🔴 "I feel so lonely, empty, and exhausted. Nothing brings me joy
-                                                anymore and I want to quit."
-                                            </button>
-                                        </div>
-                                    </div>
+                            <p class="project-summary">
+                                An agentic multilingual assistant built for vernacular regional speakers. Integrates automated
+                                emergency alert triggers and offline speech-to-text processing for women’s safety.
+                            </p>
 
-                                    <div class="sim-input-box">
-                                        <textarea id="sim-text-input" class="sim-textarea"
-                                            placeholder="Type a reflection or journal entry to test..."></textarea>
-                                        <button class="btn btn-secondary btn-sm btn-align-start"
-                                            onclick="analyzeSimText()">
-                                            <span>Run Model Evaluation</span>
-                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                            </svg>
-                                        </button>
-                                    </div>
+                            <ul class="project-bullets">
+                                <li><strong>Multi-Agent Workflow:</strong> Modeled intelligent escalation pathways using LangGraph to route conversational inquiries to safety services.</li>
+                                <li><strong>Vernacular Speech Pipeline:</strong> Integrated open-source audio pipelines to transcribe and respond in regional Hindi and Gujarati dialects.</li>
+                                <li><strong>Low-Resource Deployment:</strong> Optimized for edge processing via local Ollama models with zero external API fees.</li>
+                            </ul>
 
-                                    <div class="sim-output-card" id="sim-output-card">
-                                        <div class="sim-result-row">
-                                            <span class="sim-label">Assessed Risk Level:</span>
-                                            <span id="sim-risk-badge" class="risk-badge risk-low">LOW RISK</span>
-                                        </div>
-                                        <div class="sim-result-row">
-                                            <span class="sim-sublabel">Model Confidence Score:</span>
-                                            <span id="sim-confidence-score" class="sim-mono-value">94.2%</span>
-                                        </div>
-                                        <div class="confidence-meter">
-                                            <div id="sim-confidence-bar" class="confidence-fill" style="width: 94%;">
-                                            </div>
-                                        </div>
-                                        <div id="sim-notes" class="sim-notes">
-                                            Dominant tokens: energetic, completed, family · No critical emergency
-                                            triggers detected.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tab 2: Live Web App -->
-                            <div class="tab-content" id="mindease-tab-live">
-                                <div class="live-frame-container">
-                                    <iframe class="live-frame" src="https://ai-depression-detector.onrender.com"
-                                        title="MindEase Live" loading="lazy"></iframe>
-                                </div>
-                                <div class="frame-fallback-note">
-                                    <span>Render free instances may take ~30s to spin up on cold start</span>
-                                    <a href="https://ai-depression-detector.onrender.com" target="_blank" rel="noopener"
-                                        class="frame-link">Open full window ↗</a>
-                                </div>
+                            <div class="tech-pill-list">
+                                <span class="tech-pill">Ollama</span>
+                                <span class="tech-pill">Bhashini</span>
+                                <span class="tech-pill">LangGraph</span>
+                                <span class="tech-pill">Streamlit</span>
+                                <span class="tech-pill">Python</span>
                             </div>
                         </div>
-                    </div>
-                </article>
-            </div>
+                    </article>
 
-            <!-- More Projects: Hackathon, Frontend & ML Labs -->
-            <div class="more-projects-grid">
-                <div class="mini-card">
-                    <div>
-                        <div class="mini-card-header">
-                            <div class="mini-card-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path
-                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                    </path>
-                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                                </svg>
+                    <!-- PROJECT 4: STUDENT INTERNSHIP & PLACEMENT PORTAL -->
+                    <article class="project-card reversed deck-card" data-deck-type="project" data-deck-index="3">
+                        <div class="deck-card-inner">
+                            <div class="project-pill-row">
+                                <span class="pill-badge pill-emerald">Internship</span>
+                                <span class="pill-badge pill-sky">6 Core Applications</span>
+                                <span class="pill-badge pill-amber">UI & DOM Systems</span>
                             </div>
-                            <span class="pill-badge pill-sky">Hackathon Project</span>
+
+                            <h3 class="project-title">Student Internship & Placement Portal</h3>
+                            <div class="project-role-tag">Web Development Internship · Production Practice</div>
+
+                            <p class="project-summary">
+                                Built semantic HTML5/CSS Grid layouts, a responsive Instagram clone UI, interactive quiz
+                                platforms, and browser productivity tools during my CodeAlpha internship.
+                            </p>
+
+                            <ul class="project-bullets">
+                                <li><strong>Layout & Design Systems:</strong> Handcrafted responsive layouts using pure CSS Grid and Flexbox with zero CSS frameworks.</li>
+                                <li><strong>Pure DOM Manipulation:</strong> Architected state management and dynamic UI updates using vanilla JavaScript DOM APIs.</li>
+                                <li><strong>Component-Driven Design:</strong> Reusable UI cards, accessible interactive forms, and smooth modal overlays.</li>
+                            </ul>
+
+                            <div class="tech-pill-list">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">DOM API</span>
+                                <span class="tech-pill">CSS Grid</span>
+                                <span class="tech-pill">Responsive UI</span>
+                                <span class="tech-pill">HTML5</span>
+                            </div>
                         </div>
-                        <h3>Saheli</h3>
-                        <div class="mini-card-tag">ScriptedBy{Her} 2.0 · Agentic AI</div>
-                        <p>An agentic multilingual assistant built for vernacular regional Meesho sellers on a 100%
-                            zero-cost stack: Ollama local LLM, Bhashini voice/text translation, LangGraph multi-agent
-                            flow, and Streamlit.</p>
-                    </div>
-                    <div class="mini-card-tech">
-                        <span>Ollama</span><span>Bhashini</span><span>LangGraph</span><span>Streamlit</span>
-                    </div>
+                    </article>
+
+                    <!-- PROJECT 5: MACHINE LEARNING ALGORITHMS FROM SCRATCH -->
+                    <article class="project-card deck-card" data-deck-type="project" data-deck-index="4">
+                        <div class="deck-card-inner">
+                            <div class="project-pill-row">
+                                <span class="pill-badge pill-amber">Data & Lab Work</span>
+                                <span class="pill-badge pill-emerald">Algorithms & Math</span>
+                                <span class="pill-badge pill-sky">Python & R</span>
+                            </div>
+
+                            <h3 class="project-title">Machine Learning Algorithms from Scratch</h3>
+                            <div class="project-role-tag">Academic Implementations · Statistical & Cryptographic Computing</div>
+
+                            <p class="project-summary">
+                                Implemented Naive Bayes classifiers, K-Means clustering, Apriori market-basket association
+                                rule mining, and a custom algebraic Hill Cipher matrix encryption system in Python and R.
+                            </p>
+
+                            <ul class="project-bullets">
+                                <li><strong>Statistical Classification:</strong> Implemented Gaussian and Multinomial Naive Bayes models with Laplace smoothing.</li>
+                                <li><strong>Unsupervised Clustering:</strong> Built K-Means iterative centroids and Apriori frequent itemset mining from foundational principles.</li>
+                                <li><strong>Algebraic Encryption:</strong> Implemented matrix modular arithmetic in Python to encrypt and decrypt arbitrary-length text using invertible keys.</li>
+                            </ul>
+
+                            <div class="tech-pill-list">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">R</span>
+                                <span class="tech-pill">Naive Bayes</span>
+                                <span class="tech-pill">K-Means</span>
+                                <span class="tech-pill">Linear Algebra</span>
+                                <span class="tech-pill">Cryptography</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-
-                <div class="mini-card">
-                    <div>
-                        <div class="mini-card-header">
-                            <div class="mini-card-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <polyline points="16 18 22 12 16 6"></polyline>
-                                    <polyline points="8 6 2 12 8 18"></polyline>
-                                </svg>
-                            </div>
-                            <span class="pill-badge pill-emerald">Internship</span>
-                        </div>
-                        <h3>Front-End Internship Suite</h3>
-                        <div class="mini-card-tag">6 Core Web Applications</div>
-                        <p>Built semantic HTML5/CSS Grid layouts, a responsive Instagram-style photo feed, a dynamic JS
-                            quiz app with instant scoring, and interactive DOM task management applications.</p>
-                    </div>
-                    <div class="mini-card-tech">
-                        <span>JavaScript</span><span>DOM API</span><span>CSS Grid</span><span>Responsive UI</span>
-                    </div>
-                </div>
-
-                <div class="mini-card">
-                    <div>
-                        <div class="mini-card-header">
-                            <div class="mini-card-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <line x1="18" y1="20" x2="18" y2="10"></line>
-                                    <line x1="12" y1="20" x2="12" y2="4"></line>
-                                    <line x1="6" y1="20" x2="6" y2="14"></line>
-                                </svg>
-                            </div>
-                            <span class="pill-badge pill-amber">Data & Lab Work</span>
-                        </div>
-                        <h3>ML Algorithms & Cryptography</h3>
-                        <div class="mini-card-tag">Python & R Implementations</div>
-                        <p>Implemented Naive Bayes classifiers, K-Means clustering, Apriori market-basket association
-                            rule mining, and a custom algebraic Hill Cipher matrix encryption system in Python.</p>
-                    </div>
-                    <div class="mini-card-tech">
-                        <span>Python</span><span>R</span><span>Naive Bayes</span><span>K-Means</span><span>Linear
-                            Algebra</span>
-                    </div>
-                </div>
+                <!-- Stack Overlay Button -->
+                <button type="button" class="deck-stack-overlay" id="projects-deck-overlay" aria-label="View all projects">
+                    <span class="deck-overlay-content">
+                        <span class="deck-overlay-title">Projects</span>
+                        <span class="deck-overlay-hint">Click to view all ↗</span>
+                    </span>
+                </button>
             </div>
         </section>
 
@@ -889,115 +721,123 @@
                 </p>
             </div>
 
-            <div class="certs-grid" id="certs">
-                <!-- 1. SQL (Basic) Skill Certification -->
-                <a href="certificates/sql-basic.pdf" target="_blank" rel="noopener" class="cert-card"
-                    aria-label="View SQL (Basic) Skill Certification certificate">
-                    <div class="cert-date-badge">Jul<br>2025</div>
-                    <div class="cert-info">
-                        <div class="cert-header-row">
-                            <div class="cert-title">SQL (Basic) Skill Certification</div>
-                            <span class="cert-view-badge">View ↗</span>
-                        </div>
-                        <div class="cert-issuer">HackerRank</div>
-                        <div class="cert-skills-tags">
-                            <span class="cert-tag">Complex Queries</span>
-                            <span class="cert-tag">Joins</span>
-                            <span class="cert-tag">Aggregations</span>
+                <div class="deck-container certs-deck-container" id="certs-deck" aria-label="Certifications Deck">
+                <div class="deck-cards" id="certs">
+                    <!-- 1. SQL (Basic) Skill Certification -->
+                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="0">
+                        <div class="deck-card-inner cert-card-inner">
+                            <div class="cert-info">
+                                <div class="cert-header-row">
+                                    <div class="cert-title">SQL (Basic)</div>
+                                    <span class="cert-view-badge">View ↗</span>
+                                </div>
+                                <div class="cert-issuer">HackerRank</div>
+                                <div class="cert-skills-tags">
+                                    <span class="cert-tag">Complex Queries</span>
+                                    <span class="cert-tag">Joins</span>
+                                    <span class="cert-tag">Aggregations</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </a>
 
-                <!-- 2. AWS Academy Cloud Foundations (File pending) -->
-                <div class="cert-card cert-card-pending"
-                    aria-label="AWS Academy Cloud Foundations certificate (file not provided in certificates folder)">
-                    <div class="cert-date-badge">Aug<br>2025</div>
-                    <div class="cert-info">
-                        <div class="cert-header-row">
-                            <div class="cert-title">AWS Academy Cloud Foundations</div>
-                            <span class="cert-pending-badge"
-                                title="Certificate file not found in certificates/ folder">Pending file</span>
+                    <!-- 2. AWS Academy Cloud Foundations (Pending) -->
+                    <div class="cert-card cert-card-pending deck-card" data-deck-type="certificate" data-deck-index="1">
+                        <div class="deck-card-inner cert-card-inner">
+                            <div class="cert-info">
+                                <div class="cert-header-row">
+                                    <div class="cert-title">AWS Academy Cloud Foundations</div>
+                                    <span class="cert-pending-badge" title="Certificate file not found in certificates/ folder">Pending file</span>
+                                </div>
+                                <div class="cert-issuer">Amazon Web Services (AWS)</div>
+                                <div class="cert-skills-tags">
+                                    <span class="cert-tag">Cloud Architecture</span>
+                                    <span class="cert-tag">Core Services</span>
+                                    <span class="cert-tag">Security &amp; Pricing</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cert-issuer">Amazon Web Services (AWS)</div>
-                        <div class="cert-skills-tags">
-                            <span class="cert-tag">Cloud Architecture</span>
-                            <span class="cert-tag">Core Services</span>
-                            <span class="cert-tag">Security & Pricing</span>
+                    </div>
+
+                    <!-- 3. Google Cloud Computing Foundations (Pending) -->
+                    <div class="cert-card cert-card-pending deck-card" data-deck-type="certificate" data-deck-index="2">
+                        <div class="deck-card-inner cert-card-inner">
+                            <div class="cert-info">
+                                <div class="cert-header-row">
+                                    <div class="cert-title">Google Cloud Computing Foundations</div>
+                                    <span class="cert-pending-badge" title="Certificate file not found in certificates/ folder">Pending file</span>
+                                </div>
+                                <div class="cert-issuer">Google Cloud</div>
+                                <div class="cert-skills-tags">
+                                    <span class="cert-tag">AI Agents</span>
+                                    <span class="cert-tag">Gemini API</span>
+                                    <span class="cert-tag">Cloud Orchestration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Introduction to Networks -->
+                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="3">
+                        <div class="deck-card-inner cert-card-inner">
+                            <div class="cert-info">
+                                <div class="cert-header-row">
+                                    <div class="cert-title">Introduction to Networks</div>
+                                    <span class="cert-view-badge">View ↗</span>
+                                </div>
+                                <div class="cert-issuer">Cisco Networking Academy</div>
+                                <div class="cert-skills-tags">
+                                    <span class="cert-tag">IPv4/IPv6</span>
+                                    <span class="cert-tag">Subnetting</span>
+                                    <span class="cert-tag">OSI Model</span>
+                                    <span class="cert-tag">Network Security</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Introduction to IoT -->
+                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="4">
+                        <div class="deck-card-inner cert-card-inner">
+                            <div class="cert-info">
+                                <div class="cert-header-row">
+                                    <div class="cert-title">Introduction to IoT</div>
+                                    <span class="cert-view-badge">View ↗</span>
+                                </div>
+                                <div class="cert-issuer">Cisco Networking Academy</div>
+                                <div class="cert-skills-tags">
+                                    <span class="cert-tag">Sensors</span>
+                                    <span class="cert-tag">Automation</span>
+                                    <span class="cert-tag">Edge Computing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Vadodara Hackathon 6.0 -->
+                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="5">
+                        <div class="deck-card-inner cert-card-inner">
+                            <div class="cert-info">
+                                <div class="cert-header-row">
+                                    <div class="cert-title">Vadodara Hackathon 6.0</div>
+                                    <span class="cert-view-badge">View ↗</span>
+                                </div>
+                                <div class="cert-issuer">Parul University</div>
+                                <div class="cert-skills-tags">
+                                    <span class="cert-tag">Rapid Prototyping</span>
+                                    <span class="cert-tag">Team Collaboration</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 3. Cloud Technical Series: AI Agents (File pending) -->
-                <div class="cert-card cert-card-pending"
-                    aria-label="Cloud Technical Series: AI Agents certificate (file not provided in certificates folder)">
-                    <div class="cert-date-badge">Aug<br>2025</div>
-                    <div class="cert-info">
-                        <div class="cert-header-row">
-                            <div class="cert-title">Cloud Technical Series: AI Agents</div>
-                            <span class="cert-pending-badge"
-                                title="Certificate file not found in certificates/ folder">Pending file</span>
-                        </div>
-                        <div class="cert-issuer">Google Cloud</div>
-                        <div class="cert-skills-tags">
-                            <span class="cert-tag">AI Agents</span>
-                            <span class="cert-tag">Gemini API</span>
-                            <span class="cert-tag">Cloud Orchestration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Networking Basics -->
-                <a href="certificates/networking-basics.pdf" target="_blank" rel="noopener" class="cert-card"
-                    aria-label="View Networking Basics certificate">
-                    <div class="cert-date-badge">Aug<br>2025</div>
-                    <div class="cert-info">
-                        <div class="cert-header-row">
-                            <div class="cert-title">Networking Basics</div>
-                            <span class="cert-view-badge">View ↗</span>
-                        </div>
-                        <div class="cert-issuer">Cisco Networking Academy</div>
-                        <div class="cert-skills-tags">
-                            <span class="cert-tag">TCP/IP</span>
-                            <span class="cert-tag">Subnetting</span>
-                            <span class="cert-tag">Network Architecture</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- 5. Intro to IoT & Digital Transformation -->
-                <a href="certificates/intro-to-iot.pdf" target="_blank" rel="noopener" class="cert-card"
-                    aria-label="View Intro to IoT & Digital Transformation certificate">
-                    <div class="cert-date-badge">Feb<br>2025</div>
-                    <div class="cert-info">
-                        <div class="cert-header-row">
-                            <div class="cert-title">Intro to IoT & Digital Transformation</div>
-                            <span class="cert-view-badge">View ↗</span>
-                        </div>
-                        <div class="cert-issuer">Cisco Networking Academy</div>
-                        <div class="cert-skills-tags">
-                            <span class="cert-tag">Sensors</span>
-                            <span class="cert-tag">Automation</span>
-                            <span class="cert-tag">Edge Computing</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- 6. Vadodara Hackathon 6.0 -->
-                <a href="certificates/vadodara-hackathon.pdf" target="_blank" rel="noopener" class="cert-card"
-                    aria-label="View Vadodara Hackathon 6.0 certificate">
-                    <div class="cert-date-badge">Sep<br>2025</div>
-                    <div class="cert-info">
-                        <div class="cert-header-row">
-                            <div class="cert-title">Vadodara Hackathon 6.0</div>
-                            <span class="cert-view-badge">View ↗</span>
-                        </div>
-                        <div class="cert-issuer">Parul University</div>
-                        <div class="cert-skills-tags">
-                            <span class="cert-tag">Rapid Prototyping</span>
-                            <span class="cert-tag">Team Collaboration</span>
-                        </div>
-                    </div>
-                </a>
+                <!-- Stack Overlay Button -->
+                <button type="button" class="deck-stack-overlay" id="certs-deck-overlay" aria-label="View all certificates">
+                    <span class="deck-overlay-content">
+                        <span class="deck-overlay-title">Certificates</span>
+                        <span class="deck-overlay-hint">Click to view all ↗</span>
+                    </span>
+                </button>
             </div>
 
             <!-- Education Journey Card -->
@@ -1131,13 +971,12 @@
         </svg>
         <span id="toast-msg">Email copied to clipboard!</span>
     </div>
+    </div> <!-- /#site-wrapper -->
 
-    <!-- ==========================================================================
-         JAVASCRIPT CONTROLLERS & INTERACTION LOGIC
-         ========================================================================== -->
     <!-- ==========================================================================
          AI CHAT WIDGET ("Ask about Mushkan")
          ========================================================================== -->
+    <div id="chat-widget-root">
     <div id="mg-chat-widget" class="mg-chat-widget">
         <!-- Floating Round Launcher Button -->
         <button id="mg-chat-toggle" class="mg-chat-toggle" aria-label="Ask about Mushkan" aria-expanded="false"
@@ -1230,9 +1069,47 @@
             </form>
         </div>
     </div>
+    </div> <!-- /#chat-widget-root -->
+
+    <!-- ==========================================================================
+         REUSABLE DECK MODAL (PROJECTS & CERTIFICATES POP-UP)
+         ========================================================================== -->
+    <div id="deck-modal" class="deck-modal" role="dialog" aria-modal="true" aria-labelledby="deck-modal-title" aria-hidden="true" inert>
+        <div class="deck-modal-backdrop" id="deck-modal-backdrop"></div>
+        <div class="deck-modal-dialog">
+            <header class="deck-modal-header">
+                <div class="deck-modal-header-left">
+                    <button type="button" class="btn-back-to-grid" id="btn-back-to-grid" aria-label="Back to grid" style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        <span>Back</span>
+                    </button>
+                    <span class="deck-modal-title" id="deck-modal-title">Projects</span>
+                    <span class="deck-modal-swipe-hint" id="deck-modal-swipe-hint" style="display:none;">Swipe or use arrow keys to explore</span>
+                </div>
+                <button type="button" class="deck-modal-close" id="deck-modal-close" aria-label="Close dialog (Esc)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </header>
+            <!-- Level 1: Grid view -->
+            <div class="deck-modal-grid-wrap" id="deck-modal-grid-wrap">
+                <!-- Dynamically populated by js/main.js -->
+            </div>
+            <!-- Level 2: Detail carousel view -->
+            <div class="deck-modal-detail-wrap" id="deck-modal-detail-wrap" style="display:none;">
+                <div class="deck-modal-track" id="deck-modal-track" tabindex="0" role="region" aria-label="Deck items carousel">
+                    <!-- Dynamically populated by js/main.js -->
+                </div>
+                <footer class="deck-modal-footer">
+                    <div class="deck-modal-indicator" id="deck-modal-indicator" aria-live="polite" aria-atomic="true">
+                        <div class="deck-modal-dots" id="deck-modal-dots"></div>
+                        <span class="deck-modal-counter-text" id="deck-modal-counter-text">1 / 5</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js" defer></script>
     <script src="js/chat.js" defer></script>
 </body>
-
 </html>
