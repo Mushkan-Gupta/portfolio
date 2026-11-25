@@ -106,7 +106,6 @@ potfolio/
    ```
 3. Open `.env` and paste your free Gemini API key:
    ```env
-   GEMINI_API_KEY=AIzaSy...
    ```
 4. Start the local Vercel server:
    ```bash
