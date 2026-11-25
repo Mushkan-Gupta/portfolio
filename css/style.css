@@ -374,6 +374,22 @@
             align-items: center;
         }
 
+        @media (min-width: 900px) {
+            .hero-grid {
+                grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            }
+
+            .hero-profile-card {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .hero-text-col {
+                grid-column: 2;
+                grid-row: 1;
+            }
+        }
+
         .hero-text-col {
             min-width: 0;
         }
@@ -2820,6 +2836,13 @@
     box-shadow: var(--shadow-sm);
 }
 
+.deck-initialized .deck-card[data-deck-position="back-6"] {
+    z-index: 4;
+    opacity: 0.68;
+    transform: translate3d(124px, 60px, 0) scale(0.82);
+    box-shadow: var(--shadow-sm);
+}
+
 /* Responsive: Tablet and Mobile (< 1024px) */
 @media (max-width: 1023px) {
     .deck-initialized .deck-cards {
@@ -2854,6 +2877,9 @@
     }
     .deck-initialized .deck-card[data-deck-position="back-5"] {
         transform: translate3d(0, 80px, 0) scale(0.85);
+    }
+    .deck-initialized .deck-card[data-deck-position="back-6"] {
+        transform: translate3d(0, 92px, 0) scale(0.82);
     }
 }
 
@@ -3669,12 +3695,14 @@
     border-color: rgba(16, 185, 129, 0.4);
 }
 
-.tile-status-pdf {
+.tile-status-pdf,
+.tile-status-image {
     background: rgba(2, 132, 199, 0.15);
     color: #0284c7;
     border: 1px solid rgba(2, 132, 199, 0.3);
 }
-:root[data-theme="dark"] .tile-status-pdf {
+:root[data-theme="dark"] .tile-status-pdf,
+:root[data-theme="dark"] .tile-status-image {
     background: rgba(2, 132, 199, 0.2);
     color: #38bdf8;
     border-color: rgba(2, 132, 199, 0.4);
@@ -3702,6 +3730,42 @@
     line-height: 1.25;
     color: var(--text);
     margin: 0;
+}
+
+.tile-type-line,
+.cert-type-line,
+.cert-modal-type-line {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0.15rem 0 0.2rem 0;
+}
+
+.cert-modal-type-line {
+    font-size: 0.9rem;
+    margin: 0.15rem 0 0.5rem 0;
+}
+
+.cert-modal-image-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 0.75rem;
+    overflow: hidden;
+}
+
+.cert-modal-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+    display: block;
+    border-radius: var(--inner-radius);
 }
 
 .tile-desc {

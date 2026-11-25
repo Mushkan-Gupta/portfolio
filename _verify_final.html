@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: #000;
+            overflow: hidden;
+        }
+
+        iframe {
+            display: block;
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <pre id="report" style="display:none"></pre>
+    <script>
+        const p = new URLSearchParams(location.search);
+        const theme = p.get('theme') || 'light';
+        const vw = parseInt(p.get('vw') || '1440', 10);
+        const vh = parseInt(p.get('vh') || '900', 10);
+        const action = p.get('action') || 'hero'; // hero | certs_grid | ibm_detail | report_all
+
+        const f = document.createElement('iframe');
+        f.src = 'index.html';
+        f.style.width = vw + 'px';
+        f.style.height = vh + 'px';
+        f.onload = () => {
+            const doc = f.contentDocument;
+            const win = f.contentWindow;
+            doc.documentElement.setAttribute('data-theme', theme);
+
+            if (action === 'certs_grid') {
+                const btn = doc.getElementById('certs-deck-overlay');
+                if (btn) btn.click();
+            } else if (action === 'ibm_detail') {
+                const btn = doc.getElementById('certs-deck-overlay');
+                if (btn) {
+                    btn.click();
+                    const tiles = doc.querySelectorAll('.deck-grid-tile');
+                    if (tiles[6]) tiles[6].click();
+                }
+            }
+
+            if (action === 'report_all') {
+                const measure = () => {
+                    const nav = doc.querySelector('header.nav-bar').getBoundingClientRect();
+                    const hero = doc.querySelector('section.hero');
+                    const textCol = doc.querySelector('.hero-text-col').getBoundingClientRect();
+                    const cardCol = doc.querySelector('.hero-profile-card').getBoundingClientRect();
+                    const certCards = doc.querySelectorAll('#certs-deck .deck-card');
+                    const card7 = certCards[6];
+                    const card7Rect = card7 ? card7.getBoundingClientRect() : null;
+                    const overlayRect = doc.getElementById('certs-deck-overlay').getBoundingClientRect();
+                    const statCerts = doc.querySelector('.stat-num.accent-coral').textContent.trim();
+                    const statGpa = doc.querySelector('.stat-num.accent-amber').textContent.trim();
+
+                    // Open certs grid to inspect tile 7
+                    doc.getElementById('certs-deck-overlay').click();
+                    const tiles = Array.from(doc.querySelectorAll('.deck-grid-tile'));
+                    const tile7 = tiles[6];
+                    const tile7Info = tile7 ? {
+                        badge: tile7.querySelector('.tile-badge')?.textContent.trim(),
+                        pill: tile7.querySelector('.tile-status-pill')?.textContent.trim(),
+                        title: tile7.querySelector('.tile-title')?.textContent.trim(),
+                        typeLine: tile7.querySelector('.tile-type-line')?.textContent.trim(),
+                        issuer: tile7.querySelector('.tile-issuer')?.textContent.trim(),
+                        chipsCount: tile7.querySelectorAll('.tile-chip').length
+                    } : null;
+
+                    // Open tile 7 detail
+                    let detail7Info = null;
+                    if (tile7) {
+                        tile7.click();
+                        const panel7 = doc.querySelectorAll('.deck-modal-panel')[6];
+                        const imgEl = panel7 ? panel7.querySelector('.cert-modal-img') : null;
+                        const actions = panel7 ? Array.from(panel7.querySelectorAll('.cert-modal-actions a')) : [];
+                        detail7Info = panel7 ? {
+                            title: panel7.querySelector('.cert-modal-title')?.textContent.trim(),
+                            typeLine: panel7.querySelector('.cert-modal-type-line')?.textContent.trim(),
+                            issuer: panel7.querySelector('.cert-issuer-badge')?.textContent.trim(),
+                            tagsCount: panel7.querySelectorAll('.cert-tag').length,
+                            hasImg: !!imgEl,
+                            imgAlt: imgEl ? imgEl.getAttribute('alt') : null,
+                            imgSrc: imgEl ? imgEl.getAttribute('src') : null,
+                            imgLoading: imgEl ? imgEl.getAttribute('loading') : null,
+                            imgStyles: imgEl ? {
+                                maxWidth: win.getComputedStyle(imgEl).maxWidth,
+                                objectFit: win.getComputedStyle(imgEl).objectFit
+                            } : null,
+                            hasPdfObject: !!panel7.querySelector('object'),
+                            hasIframe: !!panel7.querySelector('iframe'),
+                            hasPdfFallback: !!panel7.querySelector('.cert-touch-fallback'),
+                            buttons: actions.map(a => ({
+                                text: a.textContent.trim(),
+                                rel: a.getAttribute('rel'),
+                                target: a.getAttribute('target'),
+                                hasDownload: a.hasAttribute('download'),
+                                href: a.getAttribute('href')
+                            })),
+                            counterText: doc.getElementById('deck-modal-counter-text')?.textContent.trim()
+                        } : null;
+                        doc.getElementById('deck-modal-close')?.click();
+                    }
+
+                    document.getElementById('report').textContent = JSON.stringify({
+                        vw: win.innerWidth,
+                        scrollWidth: doc.documentElement.scrollWidth,
+                        horizontalOverflow: doc.documentElement.scrollWidth > win.innerWidth,
+                        cardCol: { left: Math.round(cardCol.left), top: Math.round(cardCol.top), w: Math.round(cardCol.width), h: Math.round(cardCol.height) },
+                        textCol: { left: Math.round(textCol.left), top: Math.round(textCol.top), w: Math.round(textCol.width), h: Math.round(textCol.height) },
+                        statGpa,
+                        statCerts,
+                        stackCardsCount: certCards.length,
+                        card7PosAttr: card7 ? card7.getAttribute('data-deck-position') : null,
+                        card7InsideOverlay: card7Rect ? (card7Rect.right <= overlayRect.right + 1 && card7Rect.bottom <= overlayRect.bottom + 1) : null,
+                        tilesCount: tiles.length,
+                        tile7Info,
+                        detail7Info
+                    }, null, 2);
+                };
+                measure();
+                setTimeout(measure, 300);
+            }
+        };
+        document.body.appendChild(f);
+    </script>
+</body>
+
+</html>

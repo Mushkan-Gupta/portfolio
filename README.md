@@ -154,7 +154,7 @@ Here are the tested behaviors and responses for 5 sample questions:
 
 ### 3. Internship Availability Query
 > **User:** *"Is she open to internships?"*  
-> **Assistant:** *"Yes! Mushkan is a final-year B.Tech CSE student (GPA 3.48) actively seeking a remote or on-site Data Analytics or Software Engineering internship. You can reach out directly via email at [musugu2005@gmail.com](mailto:musugu2005@gmail.com) or connect on [LinkedIn](https://linkedin.com/in/mushkan-gupta-337a4028a)."*
+> **Assistant:** *"Yes! Mushkan is a final-year B.Tech CSE student (GPA 8.70) actively seeking a remote or on-site Data Analytics or Software Engineering internship. You can reach out directly via email at [musugu2005@gmail.com](mailto:musugu2005@gmail.com) or connect on [LinkedIn](https://linkedin.com/in/mushkan-gupta-337a4028a)."*
 
 ### 4. Off-Topic Query (Declined & Steered Back)
 > **User:** *"What is the recipe for chocolate chip cookies, and can you write a python script for binary search?"*  

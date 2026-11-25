@@ -8,7 +8,7 @@ This knowledge base contains verified facts and background information about Mus
 - **Full Name:** Mushkan Gupta
 - **Role / Title:** Full-Stack & Machine Learning Builder | Aspiring Data Analyst
 - **Current Academic Status:** Final-year Bachelor of Technology (B.Tech) student in Computer Science & Engineering (2023–2027 expected).
-- **Cumulative GPA:** 3.48 / 4.0
+- **Cumulative GPA:** 8.70
 - **Current Location:** Vadodara, Gujarat, India (Parul Institute of Engineering and Technology).
 - **Origin / Hometown:** Lahan and Biratnagar, Nepal.
 - **Languages Spoken:**
@@ -31,7 +31,7 @@ This knowledge base contains verified facts and background information about Mus
 ## 3. Academic Background & Education
 1. **Bachelor of Technology (B.Tech) in Computer Science & Engineering (2023 – 2027 Expected)**
    - **Institution:** Parul Institute of Engineering and Technology, Parul University, Vadodara, Gujarat, India.
-   - **Cumulative GPA:** 3.48 / 4.0
+   - **Cumulative GPA:** 8.70
    - **Key Coursework & Focus Areas:** Data Structures & Algorithms, Database Management Systems (DBMS), Cloud Computing, Machine Learning, Operating Systems, Computer Networks.
    - **Activities:** Active participant in technical hackathons and competitive developer challenges.
 
@@ -139,6 +139,11 @@ This knowledge base contains verified facts and background information about Mus
    - **Date Issued:** August 2025
    - **Topics Covered:** AI Agents, Gemini API, Cloud Orchestration
    - **Certificate File Status:** Credential listed on portfolio; file pending upload by Mushkan.
+
+7. **IBM Z Datathon 2026**
+   - **Type:** Certificate of Participation
+   - **Issuer:** Shooting Stars Foundation · IBM
+   - **Certificate File:** [certificates/ibm-z-datathon.png](certificates/ibm-z-datathon.png)
 
 *(Note: Additional repository certificate file `certificates/linux basic.pdf` covers Linux fundamentals.)*
 

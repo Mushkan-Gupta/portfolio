@@ -9,7 +9,7 @@ function initTheme() {
     let savedTheme = null;
     try {
         savedTheme = localStorage.getItem('mg_theme');
-    } catch (e) {}
+    } catch (e) { }
     if (savedTheme) {
         htmlEl.setAttribute('data-theme', savedTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
@@ -26,7 +26,7 @@ if (themeBtn) {
         htmlEl.setAttribute('data-theme', newTheme);
         try {
             localStorage.setItem('mg_theme', newTheme);
-        } catch (e) {}
+        } catch (e) { }
         showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} theme`);
     });
 }
@@ -699,6 +699,17 @@ const CERTS_DATA = [
         tags: ['Rapid Prototyping', 'Team Collaboration'],
         file: 'certificates/vadodara-hackathon.pdf',
         isPending: false
+    },
+    {
+        id: 'ibm-z-datathon',
+        title: 'IBM Z Datathon 2026',
+        typeLine: 'Certificate of Participation',
+        issuer: 'Shooting Stars Foundation · IBM',
+        date: '',
+        tags: [],
+        file: 'certificates/ibm-z-datathon.pdf',
+        mediaType: 'pdf',
+        isPending: false
     }
 ];
 
@@ -799,7 +810,7 @@ function setupTrackPointerDrag(track) {
         if (!hasPointerDragged && Math.abs(dx) > DRAG_MOVE_THRESHOLD) {
             hasPointerDragged = true;
             track.classList.add('is-dragging');
-            try { track.setPointerCapture?.(e.pointerId); } catch (_) {}
+            try { track.setPointerCapture?.(e.pointerId); } catch (_) { }
         }
         if (hasPointerDragged) {
             track.scrollLeft = pointerStartScrollLeft - dx;
@@ -811,7 +822,7 @@ function setupTrackPointerDrag(track) {
         isPointerDragging = false;
         if (hasPointerDragged) {
             track.classList.remove('is-dragging');
-            try { track.releasePointerCapture?.(e.pointerId); } catch (_) {}
+            try { track.releasePointerCapture?.(e.pointerId); } catch (_) { }
             snapTrackToNearestPanel(track);
         }
     }
@@ -1120,9 +1131,11 @@ function getCertificatePanelHtml(c, panelIdx) {
                         ${c.isPending ? `<span class="cert-pending-badge">Pending file</span>` : `<span class="cert-view-badge">Verified Credential</span>`}
                     </div>
                     <h2 class="cert-modal-title">${c.title}</h2>
+                    ${c.typeLine ? `<div class="cert-modal-type-line">${c.typeLine}</div>` : ''}
+                    ${c.tags && c.tags.length > 0 ? `
                     <div class="cert-skills-tags">
                         ${c.tags.map(t => `<span class="cert-tag">${t}</span>`).join('')}
-                    </div>
+                    </div>` : ''}
                 </div>
 
                 ${!c.isPending ? `
@@ -1133,7 +1146,7 @@ function getCertificatePanelHtml(c, panelIdx) {
                     </a>
                     <a href="${c.file}" download class="btn btn-secondary">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        <span>Download PDF</span>
+                        <span>${c.mediaType === 'image' ? 'Download' : 'Download PDF'}</span>
                     </a>
                 </div>` : ''}
             </div>
@@ -1146,6 +1159,9 @@ function getCertificatePanelHtml(c, panelIdx) {
                     </div>
                     <h3>Certificate file will be added soon.</h3>
                     <p>This credential examination has been completed with ${c.issuer}. The official digital certificate document will be attached here once processed.</p>
+                </div>` : c.mediaType === 'image' ? `
+                <div class="cert-modal-image-wrap">
+                    <img src="${c.file}" alt="${c.title} certificate of participation for Mushkan Gupta" class="cert-modal-img" loading="lazy">
                 </div>` : `
                 <div class="cert-modal-pdf-wrap">
                     <div class="cert-desktop-pdf">
@@ -1195,7 +1211,7 @@ function getBadgeLetter(item, type, idx) {
         const letters = ['T', 'M', 'S', 'F', 'M'];
         return letters[idx] || item.title.charAt(0).toUpperCase();
     }
-    const letters = ['H', 'A', 'G', 'C', 'C', 'P'];
+    const letters = ['H', 'A', 'G', 'C', 'C', 'P', 'I'];
     return letters[idx] || item.issuer.charAt(0).toUpperCase();
 }
 
@@ -1279,7 +1295,7 @@ function openDeckGrid(type, overlayEl) {
     renderGrid(type, gridWrap);
     showGridView();
 
-    try { history.pushState({ deckModal: 'grid', deck: 'grid', type }, ''); } catch (_) {}
+    try { history.pushState({ deckModal: 'grid', deck: 'grid', type }, ''); } catch (_) { }
 }
 
 function showGridView() {
@@ -1337,13 +1353,19 @@ function renderGrid(type, container) {
         } else {
             if (item.isPending) {
                 pillHtml = '<span class="tile-status-pill tile-status-soon">Soon</span>';
+            } else if (item.mediaType === 'image') {
+                pillHtml = '<span class="tile-status-pill tile-status-image">Image</span>';
             } else {
                 pillHtml = '<span class="tile-status-pill tile-status-pdf">PDF</span>';
             }
-            const chipsHtml = item.tags.slice(0, 3).map(t => `<span class="tile-chip">${t}</span>`).join('');
+            const chipsHtml = item.tags && item.tags.length > 0
+                ? `<div class="tile-tech-chips">${item.tags.slice(0, 3).map(t => `<span class="tile-chip">${t}</span>`).join('')}</div>`
+                : '';
+            const typeHtml = item.typeLine ? `<p class="tile-type-line">${item.typeLine}</p>` : '';
             bodyHtml = `
+                ${typeHtml}
                 <p class="tile-issuer">${item.issuer}</p>
-                <div class="tile-tech-chips">${chipsHtml}</div>
+                ${chipsHtml}
             `;
         }
 
@@ -1383,7 +1405,7 @@ function renderGrid(type, container) {
 // ============================================================
 function openDeckDetail(type, targetIndex) {
     showDetailView(type, targetIndex);
-    try { history.pushState({ deckModal: 'detail', deck: 'detail', type, index: targetIndex }, ''); } catch (_) {}
+    try { history.pushState({ deckModal: 'detail', deck: 'detail', type, index: targetIndex }, ''); } catch (_) { }
 }
 
 function showDetailView(type, targetIndex) {
@@ -1467,7 +1489,7 @@ function backToGrid() {
         if (history.state && (history.state.deckModal === 'detail' || history.state.deck === 'detail')) {
             history.back();
         }
-    } catch (_) {}
+    } catch (_) { }
     showGridView();
 }
 
@@ -1482,7 +1504,7 @@ function closeDeckModal(fromPopState = false) {
             } else if (history.state && (history.state.deckModal === 'grid' || history.state.deck === 'grid')) {
                 history.back();
             }
-        } catch (_) {}
+        } catch (_) { }
     }
 
     if (panelObserver) { panelObserver.disconnect(); panelObserver = null; }

@@ -54,7 +54,7 @@ function getKnowledgeBase() {
   } catch (err) {
     console.error('Error reading knowledge file:', err);
   }
-  return 'Mushkan Gupta is a final-year B.Tech CSE student (GPA 3.48) in Vadodara looking for a remote data internship. Contact: musugu2005@gmail.com.';
+  return 'Mushkan Gupta is a final-year B.Tech CSE student (GPA 8.70) in Vadodara looking for a remote data internship. Contact: musugu2005@gmail.com.';
 }
 
 module.exports = async function handler(req, res) {
@@ -181,6 +181,7 @@ CORE BEHAVIOR RULES:
      * [Vadodara Hackathon 6.0 Certificate](certificates/vadodara-hackathon.pdf)
      * [Networking Basics Certificate](certificates/networking-basics.pdf)
      * [Intro to IoT Certificate](certificates/intro-to-iot.pdf)
+     * [IBM Z Datathon 2026 Certificate](certificates/ibm-z-datathon.png)
 
 HOW TO HANDLE DIFFERENT MESSAGES
 1. Professional questions (projects, skills, education, certificates, internships, contact): answer from the knowledge base with relevant links.
