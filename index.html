@@ -17,1077 +17,1154 @@
 
 <body>
     <div id="site-wrapper">
-    <!-- Top dynamic scroll progress bar -->
-    <div id="scroll-progress"></div>
+        <!-- Top dynamic scroll progress bar -->
+        <div id="scroll-progress"></div>
 
-    <!-- Navigation Bar -->
-    <header class="nav-bar">
-        <div class="wrap nav-inner">
-            <a href="#" class="brand-link" aria-label="Mushkan Gupta - Home">
-                <div class="brand-avatar">
-                    <img src="photo.jpeg" alt="Mushkan Gupta"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="avatar-fallback" style="display:none;">MG</div>
+        <!-- Navigation Bar -->
+        <header class="nav-bar">
+            <div class="wrap nav-inner">
+                <a href="#" class="brand-link" aria-label="Mushkan Gupta - Home">
+                    <div class="brand-avatar">
+                        <img src="certificates\profile_photo.jpeg" alt="Mushkan Gupta"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div src="certificates\profile_photo.jpeg" style="display:none;">MG</div>
+                    </div>
+                    <span>Mushkan Gupta</span>
+                </a>
+
+                <!-- Desktop Nav Menu -->
+                <nav class="nav-menu-wrap" aria-label="Main Navigation">
+                    <ul class="nav-menu">
+                        <li><a href="#about" class="active">About</a></li>
+                        <li><a href="#projects">Live Projects</a></li>
+                        <li><a href="#sql-sandbox">SQL Sandbox</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#credentials">Certificates</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-label="Toggle theme (Light / Dark mode)">
+                        <!-- Sun Icon (for light mode) -->
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2"></path>
+                            <path d="M12 20v2"></path>
+                            <path d="m4.93 4.93 1.41 1.41"></path>
+                            <path d="m17.66 17.66 1.41 1.41"></path>
+                            <path d="M2 12h2"></path>
+                            <path d="M20 12h2"></path>
+                            <path d="m6.34 17.66-1.41 1.41"></path>
+                            <path d="m19.07 4.93-1.41 1.41"></path>
+                        </svg>
+                        <!-- Moon Icon (for dark mode) -->
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                        </svg>
+                    </button>
+
+                    <a href="certificates/actual_Mushkan_Gupta_Resume.pdf" target="_blank"
+                        class="btn btn-secondary btn-sm nav-desktop-action"
+                        title="View or download verified PDF resume">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Resume</span>
+                    </a>
+
+                    <a href="#contact" class="btn btn-primary btn-sm nav-desktop-action">Let’s Talk</a>
+
+                    <!-- Hamburger Button (Visible below 1100px) -->
+                    <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle"
+                        aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-menu">
+                        <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <svg class="close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="display:none;">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
-                <span>Mushkan Gupta</span>
-            </a>
+            </div>
 
-            <!-- Desktop Nav Menu -->
-            <nav class="nav-menu-wrap" aria-label="Main Navigation">
-                <ul class="nav-menu">
-                    <li><a href="#about" class="active">About</a></li>
-                    <li><a href="#projects">Live Projects</a></li>
-                    <li><a href="#sql-sandbox">SQL Sandbox</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#credentials">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <!-- Mobile Navigation Menu Dropdown (Below 1100px) -->
+            <div class="mobile-nav-dropdown" id="mobile-nav-menu" aria-hidden="true">
+                <ul class="mobile-nav-links">
+                    <li><a href="#about" class="mobile-nav-link active">About</a></li>
+                    <li><a href="#projects" class="mobile-nav-link">Live Projects</a></li>
+                    <li><a href="#sql-sandbox" class="mobile-nav-link">SQL Sandbox</a></li>
+                    <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                    <li><a href="#credentials" class="mobile-nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
                 </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <button class="theme-toggle-btn" id="theme-btn" aria-label="Toggle theme (Light / Dark mode)">
-                    <!-- Sun Icon (for light mode) -->
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="4"></circle>
-                        <path d="M12 2v2"></path>
-                        <path d="M12 20v2"></path>
-                        <path d="m4.93 4.93 1.41 1.41"></path>
-                        <path d="m17.66 17.66 1.41 1.41"></path>
-                        <path d="M2 12h2"></path>
-                        <path d="M20 12h2"></path>
-                        <path d="m6.34 17.66-1.41 1.41"></path>
-                        <path d="m19.07 4.93-1.41 1.41"></path>
-                    </svg>
-                    <!-- Moon Icon (for dark mode) -->
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                    </svg>
-                </button>
-
-                <a href="certificates/actual_Mushkan_Gupta_Resume.pdf" target="_blank"
-                    class="btn btn-secondary btn-sm nav-desktop-action" title="View or download verified PDF resume">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                    <span>Resume</span>
-                </a>
-
-                <a href="#contact" class="btn btn-primary btn-sm nav-desktop-action">Let’s Talk</a>
-
-                <!-- Hamburger Button (Visible below 1100px) -->
-                <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-menu">
-                    <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                    <svg class="close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
+                <div class="mobile-nav-actions">
+                    <a href="certificates/actual_Mushkan_Gupta_Resume.pdf" target="_blank"
+                        class="btn btn-secondary btn-sm" title="View or download verified PDF resume">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Resume</span>
+                    </a>
+                    <a href="#contact" class="btn btn-primary btn-sm">Let’s Talk</a>
+                </div>
             </div>
-        </div>
+        </header>
 
-        <!-- Mobile Navigation Menu Dropdown (Below 1100px) -->
-        <div class="mobile-nav-dropdown" id="mobile-nav-menu" aria-hidden="true">
-            <ul class="mobile-nav-links">
-                <li><a href="#about" class="mobile-nav-link active">About</a></li>
-                <li><a href="#projects" class="mobile-nav-link">Live Projects</a></li>
-                <li><a href="#sql-sandbox" class="mobile-nav-link">SQL Sandbox</a></li>
-                <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
-                <li><a href="#credentials" class="mobile-nav-link">Certificates</a></li>
-                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-            </ul>
-            <div class="mobile-nav-actions">
-                <a href="certificates/actual_Mushkan_Gupta_Resume.pdf" target="_blank"
-                    class="btn btn-secondary btn-sm" title="View or download verified PDF resume">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                    <span>Resume</span>
-                </a>
-                <a href="#contact" class="btn btn-primary btn-sm">Let’s Talk</a>
-            </div>
-        </div>
-    </header>
-
-    <main class="wrap">
-        <!-- ==========================================================================
+        <main class="wrap">
+            <!-- ==========================================================================
              HERO & PERSONAL PROFILE SECTION
              ========================================================================== -->
-        <section class="hero" id="about">
-            <div class="hero-grid">
-                <div class="hero-text-col">
-                    <div class="status-pill">
-                        <span class="status-dot"></span>
-                        <span>Open to Data & Software Internships · Vadodara, India</span>
+            <section class="hero" id="about">
+                <div class="hero-grid">
+                    <div class="hero-text-col">
+                        <div class="status-pill">
+                            <span class="status-dot"></span>
+                            <span>Open to Data & Software Internships · Vadodara, India</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            Building <span class="highlight">data-backed</span> products from models to production.
+                        </h1>
+
+                        <p class="hero-lead">
+                            I’m <strong>Mushkan Gupta</strong>, a final-year B.Tech CSE student (GPA 3.48) who bridges
+                            machine learning, backend databases, and user-facing web applications. Rather than toy
+                            tutorials, I build systems real businesses and people rely on.
+                        </p>
+
+                        <div class="hero-meta-tags">
+                            <span class="meta-tag">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                Parul Institute of Eng. & Tech (2023–2027)
+                            </span>
+                            <span class="meta-tag">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M12 2a8 8 0 0 0-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 0 0 1.3 0C12.95 21.5 20 15.4 20 10a8 8 0 0 0-8-8z">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Origin: Lahan & Biratnagar, Nepal
+                            </span>
+                            <span class="meta-tag">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                HackerRank SQL Certified
+                            </span>
+                        </div>
+
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">
+                                <span>Explore Live Projects</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M7 17l9.2-9.2M17 17V8H8" />
+                                </svg>
+                            </a>
+                            <button class="btn btn-secondary" data-action="copy-email">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                                </svg>
+                                <span>Copy Email</span>
+                            </button>
+                            <a href="https://github.com/Mushkan-Gupta" target="_blank" rel="noopener"
+                                class="btn btn-secondary btn-icon" title="Visit GitHub profile">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com/in/mushkan-gupta-337a4028a" target="_blank" rel="noopener"
+                                class="btn btn-secondary btn-icon" title="Visit LinkedIn profile">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Highlights Stat Strip -->
+                        <div class="stats-strip">
+                            <div class="stat-card">
+                                <div class="stat-num accent-emerald">2</div>
+                                <div class="stat-lbl">Live Production Apps</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-num accent-sky">1</div>
+                                <div class="stat-lbl">Commercial Client</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-num accent-amber">3.48</div>
+                                <div class="stat-lbl">B.Tech CSE GPA</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-num accent-coral">7</div>
+                                <div class="stat-lbl">Industry Certs</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <h1 class="hero-title">
-                        Building <span class="highlight">data-backed</span> products from models to production.
-                    </h1>
-
-                    <p class="hero-lead">
-                        I’m <strong>Mushkan Gupta</strong>, a final-year B.Tech CSE student (GPA 3.48) who bridges
-                        machine learning, backend databases, and user-facing web applications. Rather than toy
-                        tutorials, I build systems real businesses and people rely on.
-                    </p>
-
-                    <div class="hero-meta-tags">
-                        <span class="meta-tag">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                            </svg>
-                            Parul Institute of Eng. & Tech (2023–2027)
-                        </span>
-                        <span class="meta-tag">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M12 2a8 8 0 0 0-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 0 0 1.3 0C12.95 21.5 20 15.4 20 10a8 8 0 0 0-8-8z">
-                                </path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            Origin: Lahan & Biratnagar, Nepal
-                        </span>
-                        <span class="meta-tag">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                            HackerRank SQL Certified
-                        </span>
-                    </div>
-
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>Explore Live Projects</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M7 17l9.2-9.2M17 17V8H8" />
-                            </svg>
-                        </a>
-                        <button class="btn btn-secondary" data-action="copy-email">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-                            </svg>
-                            <span>Copy Email</span>
-                        </button>
-                        <a href="https://github.com/Mushkan-Gupta" target="_blank" rel="noopener"
-                            class="btn btn-secondary btn-icon" title="Visit GitHub profile">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/mushkan-gupta-337a4028a" target="_blank" rel="noopener"
-                            class="btn btn-secondary btn-icon" title="Visit LinkedIn profile">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Highlights Stat Strip -->
-                    <div class="stats-strip">
-                        <div class="stat-card">
-                            <div class="stat-num accent-emerald">2</div>
-                            <div class="stat-lbl">Live Production Apps</div>
+                    <!-- Personal Identity Card -->
+                    <div class="hero-profile-card">
+                        <div class="avatar-wrap">
+                            <img src="photo.jpeg" alt="Mushkan Gupta"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="avatar-fallback" style="display:none;">MG</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-num accent-sky">1</div>
-                            <div class="stat-lbl">Commercial Client</div>
+
+                        <div class="profile-bio-box">
+                            <h2 class="profile-name">Mushkan Gupta</h2>
+                            <p class="profile-role">Full-Stack & ML Builder · Aspiring Data Analyst</p>
+
+                            <div class="lang-chips">
+                                <span class="lang-chip">English (Fluent)</span>
+                                <span class="lang-chip">Hindi (Fluent)</span>
+                                <span class="lang-chip">Nepali (Native)</span>
+                            </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-num accent-amber">3.48</div>
-                            <div class="stat-lbl">B.Tech CSE GPA</div>
+
+                        <div class="profile-drives-me">
+                            <strong>What drives me:</strong>
+                            Taking messy datasets and ambiguous problems, designing robust PostgreSQL schemas, training
+                            clean ML pipelines, and launching responsive web interfaces.
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-num accent-coral">7</div>
-                            <div class="stat-lbl">Industry Certs</div>
+
+                        <div class="quick-contact-row">
+                            <a href="mailto:musugu2005@gmail.com" class="social-link" title="Send email">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com/in/mushkan-gupta-337a4028a" target="_blank" rel="noopener"
+                                class="social-link" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/Mushkan-Gupta" target="_blank" rel="noopener"
+                                class="social-link" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="actual_Mushkan_Gupta_Resume.pdf" target="_blank" class="social-link"
+                                title="PDF Resume">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Personal Identity Card -->
-                <div class="hero-profile-card">
-                    <div class="avatar-wrap">
-                        <img src="photo.jpeg" alt="Mushkan Gupta"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="avatar-fallback" style="display:none;">MG</div>
-                    </div>
-
-                    <div class="profile-bio-box">
-                        <h2 class="profile-name">Mushkan Gupta</h2>
-                        <p class="profile-role">Full-Stack & ML Builder · Aspiring Data Analyst</p>
-
-                        <div class="lang-chips">
-                            <span class="lang-chip">English (Fluent)</span>
-                            <span class="lang-chip">Hindi (Fluent)</span>
-                            <span class="lang-chip">Nepali (Native)</span>
-                        </div>
-                    </div>
-
-                    <div class="profile-drives-me">
-                        <strong>What drives me:</strong>
-                        Taking messy datasets and ambiguous problems, designing robust PostgreSQL schemas, training
-                        clean ML pipelines, and launching responsive web interfaces.
-                    </div>
-
-                    <div class="quick-contact-row">
-                        <a href="mailto:musugu2005@gmail.com" class="social-link" title="Send email">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/mushkan-gupta-337a4028a" target="_blank" rel="noopener"
-                            class="social-link" title="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                        </a>
-                        <a href="https://github.com/Mushkan-Gupta" target="_blank" rel="noopener" class="social-link"
-                            title="GitHub">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="actual_Mushkan_Gupta_Resume.pdf" target="_blank" class="social-link"
-                            title="PDF Resume">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
+            <!-- ==========================================================================
              FEATURED LIVE PROJECTS
              ========================================================================== -->
-        <section id="projects">
-            <div class="section-header">
-                <div class="section-eyebrow">Production Portfolio</div>
-                <h2 class="section-title">Tested, deployed, and live on the web.</h2>
-                <p class="section-desc">
-                    These aren’t just static screenshots or school mockups. You can interact with live instances right
-                    here or launch them directly in new tabs.
-                </p>
-            </div>
-
-                        <div class="deck-container projects-deck-container" id="projects-deck" aria-label="Featured Projects Deck">
-                <div class="deck-cards">
-                    <!-- PROJECT 1: TVS RAJ AUTOMOBILES -->
-                    <article class="project-card deck-card" data-deck-type="project" data-deck-index="0">
-                        <div class="deck-card-inner">
-                            <div class="project-pill-row">
-                                <span class="pill-badge pill-emerald">Live on Vercel</span>
-                                <span class="pill-badge pill-sky">Solo Client Project</span>
-                                <span class="pill-badge pill-amber">Commercial System</span>
-                            </div>
-
-                            <h3 class="project-title">TVS Raj Automobiles</h3>
-                            <div class="project-role-tag">Full-Stack Dealership Platform · Lahan, Nepal</div>
-
-                            <p class="project-summary">
-                                Built single-handedly for a bustling motorcycle dealership in Lahan, Nepal. Transformed
-                                manual paper inquiry logging and stock coordination into a unified, secure cloud system.
-                            </p>
-
-                            <ul class="project-bullets">
-                                <li><strong>Multi-Role RBAC:</strong> Engineered isolated views for public customer inquiries, employee inventory & sales intake, and owner-level revenue summaries.</li>
-                                <li><strong>End-to-End Architecture:</strong> Designed normalized PostgreSQL schema on Supabase, implemented Row Level Security (RLS) policies, and crafted a responsive React interface.</li>
-                                <li><strong>Business Impact:</strong> Replaced scattered physical ledgers with real-time stock counts and instant customer inquiry tracking.</li>
-                            </ul>
-
-                            <div class="tech-pill-list">
-                                <span class="tech-pill">React</span>
-                                <span class="tech-pill">Vite</span>
-                                <span class="tech-pill">Tailwind CSS</span>
-                                <span class="tech-pill">Supabase</span>
-                                <span class="tech-pill">PostgreSQL</span>
-                                <span class="tech-pill">Vercel</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJECT 2: MINDEASE -->
-                    <article class="project-card reversed deck-card" data-deck-type="project" data-deck-index="1">
-                        <div class="deck-card-inner">
-                            <div class="project-pill-row">
-                                <span class="pill-badge pill-emerald">Live on Render</span>
-                                <span class="pill-badge pill-sky">IEEE Team Project</span>
-                                <span class="pill-badge pill-amber">NLP & Machine Learning</span>
-                            </div>
-
-                            <h3 class="project-title">MindEase</h3>
-                            <div class="project-role-tag">Team Lead · Backend & ML Architecture</div>
-
-                            <p class="project-summary">
-                                A mental health journaling tool that analyzes user-written text for depression and self-harm
-                                risk indicators. Guided an 8-person engineering team to an IEEE publication.
-                            </p>
-
-                            <ul class="project-bullets">
-                                <li><strong>Dual-Engine Classification:</strong> Implemented scikit-learn TF-IDF + Logistic Regression pipeline achieving high classification recall on mental-health forum datasets.</li>
-                                <li><strong>Real-Time Inference API:</strong> Containerized Python Flask backend on Render, delivering sub-100ms inference times with defensive input sanitization.</li>
-                                <li><strong>IEEE Documentation:</strong> Authored system architecture and empirical validation sections for our published IEEE conference submission.</li>
-                            </ul>
-
-                            <div class="tech-pill-list">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">Flask REST API</span>
-                                <span class="tech-pill">scikit-learn</span>
-                                <span class="tech-pill">TF-IDF</span>
-                                <span class="tech-pill">Logistic Regression</span>
-                                <span class="tech-pill">Render</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJECT 3: SAHELI -->
-                    <article class="project-card deck-card" data-deck-type="project" data-deck-index="2">
-                        <div class="deck-card-inner">
-                            <div class="project-pill-row">
-                                <span class="pill-badge pill-emerald">Hackathon Project</span>
-                                <span class="pill-badge pill-sky">Agentic AI</span>
-                                <span class="pill-badge pill-amber">Zero-Cost Stack</span>
-                            </div>
-
-                            <h3 class="project-title">Saheli</h3>
-                            <div class="project-role-tag">ScriptedBy{Her} 2.0 Hackathon · Multilingual Vernacular Assistant</div>
-
-                            <p class="project-summary">
-                                An agentic multilingual assistant built for vernacular regional speakers. Integrates automated
-                                emergency alert triggers and offline speech-to-text processing for women’s safety.
-                            </p>
-
-                            <ul class="project-bullets">
-                                <li><strong>Multi-Agent Workflow:</strong> Modeled intelligent escalation pathways using LangGraph to route conversational inquiries to safety services.</li>
-                                <li><strong>Vernacular Speech Pipeline:</strong> Integrated open-source audio pipelines to transcribe and respond in regional Hindi and Gujarati dialects.</li>
-                                <li><strong>Low-Resource Deployment:</strong> Optimized for edge processing via local Ollama models with zero external API fees.</li>
-                            </ul>
-
-                            <div class="tech-pill-list">
-                                <span class="tech-pill">Ollama</span>
-                                <span class="tech-pill">Bhashini</span>
-                                <span class="tech-pill">LangGraph</span>
-                                <span class="tech-pill">Streamlit</span>
-                                <span class="tech-pill">Python</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJECT 4: STUDENT INTERNSHIP & PLACEMENT PORTAL -->
-                    <article class="project-card reversed deck-card" data-deck-type="project" data-deck-index="3">
-                        <div class="deck-card-inner">
-                            <div class="project-pill-row">
-                                <span class="pill-badge pill-emerald">Internship</span>
-                                <span class="pill-badge pill-sky">6 Core Applications</span>
-                                <span class="pill-badge pill-amber">UI & DOM Systems</span>
-                            </div>
-
-                            <h3 class="project-title">Student Internship & Placement Portal</h3>
-                            <div class="project-role-tag">Web Development Internship · Production Practice</div>
-
-                            <p class="project-summary">
-                                Built semantic HTML5/CSS Grid layouts, a responsive Instagram clone UI, interactive quiz
-                                platforms, and browser productivity tools during my CodeAlpha internship.
-                            </p>
-
-                            <ul class="project-bullets">
-                                <li><strong>Layout & Design Systems:</strong> Handcrafted responsive layouts using pure CSS Grid and Flexbox with zero CSS frameworks.</li>
-                                <li><strong>Pure DOM Manipulation:</strong> Architected state management and dynamic UI updates using vanilla JavaScript DOM APIs.</li>
-                                <li><strong>Component-Driven Design:</strong> Reusable UI cards, accessible interactive forms, and smooth modal overlays.</li>
-                            </ul>
-
-                            <div class="tech-pill-list">
-                                <span class="tech-pill">JavaScript</span>
-                                <span class="tech-pill">DOM API</span>
-                                <span class="tech-pill">CSS Grid</span>
-                                <span class="tech-pill">Responsive UI</span>
-                                <span class="tech-pill">HTML5</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJECT 5: MACHINE LEARNING ALGORITHMS FROM SCRATCH -->
-                    <article class="project-card deck-card" data-deck-type="project" data-deck-index="4">
-                        <div class="deck-card-inner">
-                            <div class="project-pill-row">
-                                <span class="pill-badge pill-amber">Data & Lab Work</span>
-                                <span class="pill-badge pill-emerald">Algorithms & Math</span>
-                                <span class="pill-badge pill-sky">Python & R</span>
-                            </div>
-
-                            <h3 class="project-title">Machine Learning Algorithms from Scratch</h3>
-                            <div class="project-role-tag">Academic Implementations · Statistical & Cryptographic Computing</div>
-
-                            <p class="project-summary">
-                                Implemented Naive Bayes classifiers, K-Means clustering, Apriori market-basket association
-                                rule mining, and a custom algebraic Hill Cipher matrix encryption system in Python and R.
-                            </p>
-
-                            <ul class="project-bullets">
-                                <li><strong>Statistical Classification:</strong> Implemented Gaussian and Multinomial Naive Bayes models with Laplace smoothing.</li>
-                                <li><strong>Unsupervised Clustering:</strong> Built K-Means iterative centroids and Apriori frequent itemset mining from foundational principles.</li>
-                                <li><strong>Algebraic Encryption:</strong> Implemented matrix modular arithmetic in Python to encrypt and decrypt arbitrary-length text using invertible keys.</li>
-                            </ul>
-
-                            <div class="tech-pill-list">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">R</span>
-                                <span class="tech-pill">Naive Bayes</span>
-                                <span class="tech-pill">K-Means</span>
-                                <span class="tech-pill">Linear Algebra</span>
-                                <span class="tech-pill">Cryptography</span>
-                            </div>
-                        </div>
-                    </article>
+            <section id="projects">
+                <div class="section-header">
+                    <div class="section-eyebrow">Production Portfolio</div>
+                    <h2 class="section-title">Tested, deployed, and live on the web.</h2>
+                    <p class="section-desc">
+                        These aren’t just static screenshots or school mockups. You can interact with live instances
+                        right
+                        here or launch them directly in new tabs.
+                    </p>
                 </div>
-                <!-- Stack Overlay Button -->
-                <button type="button" class="deck-stack-overlay" id="projects-deck-overlay" aria-label="View all projects">
-                    <span class="deck-overlay-content">
-                        <span class="deck-overlay-title">Projects</span>
-                        <span class="deck-overlay-hint">Click to view all ↗</span>
-                    </span>
-                </button>
-            </div>
-        </section>
 
-        <!-- ==========================================================================
+                <div class="deck-container projects-deck-container" id="projects-deck"
+                    aria-label="Featured Projects Deck">
+                    <div class="deck-cards">
+                        <!-- PROJECT 1: TVS RAJ AUTOMOBILES -->
+                        <article class="project-card deck-card" data-deck-type="project" data-deck-index="0">
+                            <div class="deck-card-inner">
+                                <div class="project-pill-row">
+                                    <span class="pill-badge pill-emerald">Live on Vercel</span>
+                                    <span class="pill-badge pill-sky">Solo Client Project</span>
+                                    <span class="pill-badge pill-amber">Commercial System</span>
+                                </div>
+
+                                <h3 class="project-title">TVS Raj Automobiles</h3>
+                                <div class="project-role-tag">Full-Stack Dealership Platform · Lahan, Nepal</div>
+
+                                <p class="project-summary">
+                                    Built single-handedly for a bustling motorcycle dealership in Lahan, Nepal.
+                                    Transformed
+                                    manual paper inquiry logging and stock coordination into a unified, secure cloud
+                                    system.
+                                </p>
+
+                                <ul class="project-bullets">
+                                    <li><strong>Multi-Role RBAC:</strong> Engineered isolated views for public customer
+                                        inquiries, employee inventory & sales intake, and owner-level revenue summaries.
+                                    </li>
+                                    <li><strong>End-to-End Architecture:</strong> Designed normalized PostgreSQL schema
+                                        on Supabase, implemented Row Level Security (RLS) policies, and crafted a
+                                        responsive React interface.</li>
+                                    <li><strong>Business Impact:</strong> Replaced scattered physical ledgers with
+                                        real-time stock counts and instant customer inquiry tracking.</li>
+                                </ul>
+
+                                <div class="tech-pill-list">
+                                    <span class="tech-pill">React</span>
+                                    <span class="tech-pill">Vite</span>
+                                    <span class="tech-pill">Tailwind CSS</span>
+                                    <span class="tech-pill">Supabase</span>
+                                    <span class="tech-pill">PostgreSQL</span>
+                                    <span class="tech-pill">Vercel</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- PROJECT 2: MINDEASE -->
+                        <article class="project-card reversed deck-card" data-deck-type="project" data-deck-index="1">
+                            <div class="deck-card-inner">
+                                <div class="project-pill-row">
+                                    <span class="pill-badge pill-emerald">Live on Render</span>
+                                    <span class="pill-badge pill-sky">IEEE Team Project</span>
+                                    <span class="pill-badge pill-amber">NLP & Machine Learning</span>
+                                </div>
+
+                                <h3 class="project-title">MindEase</h3>
+                                <div class="project-role-tag">Team Lead · Backend & ML Architecture</div>
+
+                                <p class="project-summary">
+                                    A mental health journaling tool that analyzes user-written text for depression and
+                                    self-harm
+                                    risk indicators. Guided an 8-person engineering team to an IEEE publication.
+                                </p>
+
+                                <ul class="project-bullets">
+                                    <li><strong>Dual-Engine Classification:</strong> Implemented scikit-learn TF-IDF +
+                                        Logistic Regression pipeline achieving high classification recall on
+                                        mental-health forum datasets.</li>
+                                    <li><strong>Real-Time Inference API:</strong> Containerized Python Flask backend on
+                                        Render, delivering sub-100ms inference times with defensive input sanitization.
+                                    </li>
+                                    <li><strong>IEEE Documentation:</strong> Authored system architecture and empirical
+                                        validation sections for our published IEEE conference submission.</li>
+                                </ul>
+
+                                <div class="tech-pill-list">
+                                    <span class="tech-pill">Python</span>
+                                    <span class="tech-pill">Flask REST API</span>
+                                    <span class="tech-pill">scikit-learn</span>
+                                    <span class="tech-pill">TF-IDF</span>
+                                    <span class="tech-pill">Logistic Regression</span>
+                                    <span class="tech-pill">Render</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- PROJECT 3: SAHELI -->
+                        <article class="project-card deck-card" data-deck-type="project" data-deck-index="2">
+                            <div class="deck-card-inner">
+                                <div class="project-pill-row">
+                                    <span class="pill-badge pill-emerald">Hackathon Project</span>
+                                    <span class="pill-badge pill-sky">Agentic AI</span>
+                                    <span class="pill-badge pill-amber">Zero-Cost Stack</span>
+                                </div>
+
+                                <h3 class="project-title">Saheli</h3>
+                                <div class="project-role-tag">ScriptedBy{Her} 2.0 Hackathon · Multilingual Vernacular
+                                    Assistant</div>
+
+                                <p class="project-summary">
+                                    An agentic multilingual assistant built for vernacular regional speakers. Integrates
+                                    automated
+                                    emergency alert triggers and offline speech-to-text processing for women’s safety.
+                                </p>
+
+                                <ul class="project-bullets">
+                                    <li><strong>Multi-Agent Workflow:</strong> Modeled intelligent escalation pathways
+                                        using LangGraph to route conversational inquiries to safety services.</li>
+                                    <li><strong>Vernacular Speech Pipeline:</strong> Integrated open-source audio
+                                        pipelines to transcribe and respond in regional Hindi and Gujarati dialects.
+                                    </li>
+                                    <li><strong>Low-Resource Deployment:</strong> Optimized for edge processing via
+                                        local Ollama models with zero external API fees.</li>
+                                </ul>
+
+                                <div class="tech-pill-list">
+                                    <span class="tech-pill">Ollama</span>
+                                    <span class="tech-pill">Bhashini</span>
+                                    <span class="tech-pill">LangGraph</span>
+                                    <span class="tech-pill">Streamlit</span>
+                                    <span class="tech-pill">Python</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- PROJECT 4: STUDENT INTERNSHIP & PLACEMENT PORTAL -->
+                        <article class="project-card reversed deck-card" data-deck-type="project" data-deck-index="3">
+                            <div class="deck-card-inner">
+                                <div class="project-pill-row">
+                                    <span class="pill-badge pill-emerald">Internship</span>
+                                    <span class="pill-badge pill-sky">6 Core Applications</span>
+                                    <span class="pill-badge pill-amber">UI & DOM Systems</span>
+                                </div>
+
+                                <h3 class="project-title">Student Internship & Placement Portal</h3>
+                                <div class="project-role-tag">Web Development Internship · Production Practice</div>
+
+                                <p class="project-summary">
+                                    Built semantic HTML5/CSS Grid layouts, a responsive Instagram clone UI, interactive
+                                    quiz
+                                    platforms, and browser productivity tools during my CodeAlpha internship.
+                                </p>
+
+                                <ul class="project-bullets">
+                                    <li><strong>Layout & Design Systems:</strong> Handcrafted responsive layouts using
+                                        pure CSS Grid and Flexbox with zero CSS frameworks.</li>
+                                    <li><strong>Pure DOM Manipulation:</strong> Architected state management and dynamic
+                                        UI updates using vanilla JavaScript DOM APIs.</li>
+                                    <li><strong>Component-Driven Design:</strong> Reusable UI cards, accessible
+                                        interactive forms, and smooth modal overlays.</li>
+                                </ul>
+
+                                <div class="tech-pill-list">
+                                    <span class="tech-pill">JavaScript</span>
+                                    <span class="tech-pill">DOM API</span>
+                                    <span class="tech-pill">CSS Grid</span>
+                                    <span class="tech-pill">Responsive UI</span>
+                                    <span class="tech-pill">HTML5</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- PROJECT 5: MACHINE LEARNING ALGORITHMS FROM SCRATCH -->
+                        <article class="project-card deck-card" data-deck-type="project" data-deck-index="4">
+                            <div class="deck-card-inner">
+                                <div class="project-pill-row">
+                                    <span class="pill-badge pill-amber">Data & Lab Work</span>
+                                    <span class="pill-badge pill-emerald">Algorithms & Math</span>
+                                    <span class="pill-badge pill-sky">Python & R</span>
+                                </div>
+
+                                <h3 class="project-title">Machine Learning Algorithms from Scratch</h3>
+                                <div class="project-role-tag">Academic Implementations · Statistical & Cryptographic
+                                    Computing</div>
+
+                                <p class="project-summary">
+                                    Implemented Naive Bayes classifiers, K-Means clustering, Apriori market-basket
+                                    association
+                                    rule mining, and a custom algebraic Hill Cipher matrix encryption system in Python
+                                    and R.
+                                </p>
+
+                                <ul class="project-bullets">
+                                    <li><strong>Statistical Classification:</strong> Implemented Gaussian and
+                                        Multinomial Naive Bayes models with Laplace smoothing.</li>
+                                    <li><strong>Unsupervised Clustering:</strong> Built K-Means iterative centroids and
+                                        Apriori frequent itemset mining from foundational principles.</li>
+                                    <li><strong>Algebraic Encryption:</strong> Implemented matrix modular arithmetic in
+                                        Python to encrypt and decrypt arbitrary-length text using invertible keys.</li>
+                                </ul>
+
+                                <div class="tech-pill-list">
+                                    <span class="tech-pill">Python</span>
+                                    <span class="tech-pill">R</span>
+                                    <span class="tech-pill">Naive Bayes</span>
+                                    <span class="tech-pill">K-Means</span>
+                                    <span class="tech-pill">Linear Algebra</span>
+                                    <span class="tech-pill">Cryptography</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Stack Overlay Button -->
+                    <button type="button" class="deck-stack-overlay" id="projects-deck-overlay"
+                        aria-label="View all projects">
+                        <span class="deck-overlay-content">
+                            <span class="deck-overlay-title">Projects</span>
+                            <span class="deck-overlay-hint">Click to view all ↗</span>
+                        </span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ==========================================================================
              INTERACTIVE SQL & DATA SANDBOX (PROVES REAL ANALYTICAL COMPETENCE)
              ========================================================================== -->
-        <section id="sql-sandbox">
-            <div class="section-header">
-                <div class="section-eyebrow">Interactive Data Workbench</div>
-                <h2 class="section-title">Querying data like a real analyst.</h2>
-                <p class="section-desc">
-                    As a HackerRank Certified SQL practitioner transitioning into Data Analytics, I don’t just write
-                    queries in the abstract. Run real queries against the TVS Dealership & MindEase relational schemas
-                    below.
-                </p>
-            </div>
-
-            <div class="sql-workbench">
-                <div class="workbench-header">
-                    <div class="workbench-title-group">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="icon-brand">
-                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                        </svg>
-                        <h3>PostgreSQL Console Simulator</h3>
-                    </div>
-
-                    <div class="sql-preset-chips">
-                        <button class="sql-preset-btn active" onclick="loadSqlQuery('inventory')">Low Stock
-                            Alerts</button>
-                        <button class="sql-preset-btn" onclick="loadSqlQuery('sales')">Top Selling Models</button>
-                        <button class="sql-preset-btn" onclick="loadSqlQuery('inquiries')">Inquiry Conversion</button>
-                        <button class="sql-preset-btn" onclick="loadSqlQuery('mindease_risk')">Risk Class Stats</button>
-                    </div>
+            <section id="sql-sandbox">
+                <div class="section-header">
+                    <div class="section-eyebrow">Interactive Data Workbench</div>
+                    <h2 class="section-title">Querying data like a real analyst.</h2>
+                    <p class="section-desc">
+                        As a HackerRank Certified SQL practitioner transitioning into Data Analytics, I don’t just write
+                        queries in the abstract. Run real queries against the TVS Dealership & MindEase relational
+                        schemas
+                        below.
+                    </p>
                 </div>
 
-                <div class="workbench-body">
-                    <!-- Editor Pane -->
-                    <div class="sql-editor-pane">
-                        <div class="sql-code-display" id="sql-code-view">
-                            <!-- Populated dynamically via JS -->
-                        </div>
-                        <div class="editor-action-bar">
-                            <span class="sql-status-text" id="sql-perf-indicator">Latency: 1.4ms · Supabase
-                                PostgreSQL</span>
-                            <button class="btn btn-primary btn-sm" onclick="executeCurrentQuery()">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                </svg>
-                                <span>Execute Query</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Result Table Pane -->
-                    <div class="sql-result-pane">
-                        <div class="table-meta-bar">
-                            <span id="sql-table-name">Table: dealership_inventory</span>
-                            <span id="sql-row-count">3 rows returned</span>
-                        </div>
-                        <div class="table-scroll">
-                            <table class="sql-table" id="sql-table-output">
-                                <!-- Populated dynamically via JS -->
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             SKILLS & COMPETENCY MATRIX
-             ========================================================================== -->
-        <section id="skills">
-            <div class="section-header">
-                <div class="section-eyebrow">Technical Competencies</div>
-                <h2 class="section-title">Tools I have built with, not just read about.</h2>
-                <p class="section-desc">
-                    Every skill below is tied to a deployed project, lab implementation, or client production system.
-                </p>
-            </div>
-
-            <div class="skills-filter-nav">
-                <button class="filter-pill active" onclick="filterSkills('all')">All Skills</button>
-                <button class="filter-pill" onclick="filterSkills('ml')">ML & Data Science</button>
-                <button class="filter-pill" onclick="filterSkills('backend')">Databases & Backend</button>
-                <button class="filter-pill" onclick="filterSkills('frontend')">Frontend & UI</button>
-                <button class="filter-pill" onclick="filterSkills('core')">Languages & Cloud</button>
-            </div>
-
-            <div class="skills-grid" id="skills-grid">
-                <!-- Group 1: Machine Learning & Analytics -->
-                <div class="skill-group-card theme-amber" data-category="ml">
-                    <div class="skill-card-top">
-                        <div class="skill-card-icon">
+                <div class="sql-workbench">
+                    <div class="workbench-header">
+                        <div class="workbench-title-group">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h4>Machine Learning</h4>
-                    </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Python & scikit-learn</span></div>
-                            <div class="skill-context">Text classification pipelines, TF-IDF vectorizers, Logistic
-                                Regression</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Statistical Modeling</span></div>
-                            <div class="skill-context">Naive Bayes, K-Means clustering, Apriori association mining</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Agentic Workflows</span></div>
-                            <div class="skill-context">LangGraph multi-agent coordination, Ollama local model hosting
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Group 2: Databases & Backend -->
-                <div class="skill-group-card" data-category="backend">
-                    <div class="skill-card-top">
-                        <div class="skill-card-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                                stroke-width="2" class="icon-brand">
                                 <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                                 <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
                                 <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                             </svg>
+                            <h3>PostgreSQL Console Simulator</h3>
                         </div>
-                        <h4>Databases & Backend</h4>
-                    </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>SQL & PostgreSQL</span></div>
-                            <div class="skill-context">Certified skill, relational schema design, indexing, aggregations
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Supabase & Auth</span></div>
-                            <div class="skill-context">Row-level security policies, PostgreSQL triggers, role isolation
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Flask REST APIs</span></div>
-                            <div class="skill-context">Endpoint design, serialized ML model serving, CORS & error
-                                handling</div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Group 3: Frontend & UI -->
-                <div class="skill-group-card theme-sky" data-category="frontend">
-                    <div class="skill-card-top">
-                        <div class="skill-card-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 12 17 22 12"></polyline>
-                            </svg>
+                        <div class="sql-preset-chips">
+                            <button class="sql-preset-btn active" onclick="loadSqlQuery('inventory')">Low Stock
+                                Alerts</button>
+                            <button class="sql-preset-btn" onclick="loadSqlQuery('sales')">Top Selling Models</button>
+                            <button class="sql-preset-btn" onclick="loadSqlQuery('inquiries')">Inquiry
+                                Conversion</button>
+                            <button class="sql-preset-btn" onclick="loadSqlQuery('mindease_risk')">Risk Class
+                                Stats</button>
                         </div>
-                        <h4>Frontend & UI</h4>
                     </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>React & Vite</span></div>
-                            <div class="skill-context">Component architecture, custom hooks, state management</div>
+
+                    <div class="workbench-body">
+                        <!-- Editor Pane -->
+                        <div class="sql-editor-pane">
+                            <div class="sql-code-display" id="sql-code-view">
+                                <!-- Populated dynamically via JS -->
+                            </div>
+                            <div class="editor-action-bar">
+                                <span class="sql-status-text" id="sql-perf-indicator">Latency: 1.4ms · Supabase
+                                    PostgreSQL</span>
+                                <button class="btn btn-primary btn-sm" onclick="executeCurrentQuery()">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                    <span>Execute Query</span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Tailwind CSS</span></div>
-                            <div class="skill-context">Responsive utility design, dark/light styling, clean design
-                                tokens</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Modern Web APIs</span></div>
-                            <div class="skill-context">Fetch API, asynchronous JavaScript, semantic accessible HTML5
+
+                        <!-- Result Table Pane -->
+                        <div class="sql-result-pane">
+                            <div class="table-meta-bar">
+                                <span id="sql-table-name">Table: dealership_inventory</span>
+                                <span id="sql-row-count">3 rows returned</span>
+                            </div>
+                            <div class="table-scroll">
+                                <table class="sql-table" id="sql-table-output">
+                                    <!-- Populated dynamically via JS -->
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Group 4: Languages & Systems -->
-                <div class="skill-group-card theme-coral" data-category="core">
-                    <div class="skill-card-top">
-                        <div class="skill-card-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="4 17 10 11 4 5"></polyline>
-                                <line x1="12" y1="19" x2="20" y2="19"></line>
-                            </svg>
-                        </div>
-                        <h4>Languages & Cloud</h4>
-                    </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Core Languages</span></div>
-                            <div class="skill-context">C, C++, Java, Python, R, SQL</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Cloud Foundations</span></div>
-                            <div class="skill-context">AWS Academy Graduate, Google Cloud AI Agents series</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name-row"><span>Linux & Git</span></div>
-                            <div class="skill-context">Bash CLI, Git version control, deployment on Vercel & Render
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Learning Roadmap -->
-            <div class="roadmap-banner">
-                <div class="roadmap-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                </div>
-                <div class="roadmap-content">
-                    <h5>Current Growth Vector: Data Analytics Specialization</h5>
-                    <p>
-                        Currently deepening my command of advanced SQL (Window functions, Common Table Expressions,
-                        query optimization), alongside pandas and NumPy for deep EDA, paired with Power BI to deliver
-                        executive-ready business intelligence dashboards.
+            <!-- ==========================================================================
+             SKILLS & COMPETENCY MATRIX
+             ========================================================================== -->
+            <section id="skills">
+                <div class="section-header">
+                    <div class="section-eyebrow">Technical Competencies</div>
+                    <h2 class="section-title">Tools I have built with, not just read about.</h2>
+                    <p class="section-desc">
+                        Every skill below is tied to a deployed project, lab implementation, or client production
+                        system.
                     </p>
                 </div>
-            </div>
-        </section>
 
-        <!-- ==========================================================================
+                <div class="skills-filter-nav">
+                    <button class="filter-pill active" onclick="filterSkills('all')">All Skills</button>
+                    <button class="filter-pill" onclick="filterSkills('ml')">ML & Data Science</button>
+                    <button class="filter-pill" onclick="filterSkills('backend')">Databases & Backend</button>
+                    <button class="filter-pill" onclick="filterSkills('frontend')">Frontend & UI</button>
+                    <button class="filter-pill" onclick="filterSkills('core')">Languages & Cloud</button>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Group 1: Machine Learning & Analytics -->
+                    <div class="skill-group-card theme-amber" data-category="ml">
+                        <div class="skill-card-top">
+                            <div class="skill-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h4>Machine Learning</h4>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Python & scikit-learn</span></div>
+                                <div class="skill-context">Text classification pipelines, TF-IDF vectorizers, Logistic
+                                    Regression</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Statistical Modeling</span></div>
+                                <div class="skill-context">Naive Bayes, K-Means clustering, Apriori association mining
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Agentic Workflows</span></div>
+                                <div class="skill-context">LangGraph multi-agent coordination, Ollama local model
+                                    hosting
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 2: Databases & Backend -->
+                    <div class="skill-group-card" data-category="backend">
+                        <div class="skill-card-top">
+                            <div class="skill-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <h4>Databases & Backend</h4>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>SQL & PostgreSQL</span></div>
+                                <div class="skill-context">Certified skill, relational schema design, indexing,
+                                    aggregations
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Supabase & Auth</span></div>
+                                <div class="skill-context">Row-level security policies, PostgreSQL triggers, role
+                                    isolation
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Flask REST APIs</span></div>
+                                <div class="skill-context">Endpoint design, serialized ML model serving, CORS & error
+                                    handling</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 3: Frontend & UI -->
+                    <div class="skill-group-card theme-sky" data-category="frontend">
+                        <div class="skill-card-top">
+                            <div class="skill-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Frontend & UI</h4>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>React & Vite</span></div>
+                                <div class="skill-context">Component architecture, custom hooks, state management</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Tailwind CSS</span></div>
+                                <div class="skill-context">Responsive utility design, dark/light styling, clean design
+                                    tokens</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Modern Web APIs</span></div>
+                                <div class="skill-context">Fetch API, asynchronous JavaScript, semantic accessible HTML5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 4: Languages & Systems -->
+                    <div class="skill-group-card theme-coral" data-category="core">
+                        <div class="skill-card-top">
+                            <div class="skill-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="4 17 10 11 4 5"></polyline>
+                                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                                </svg>
+                            </div>
+                            <h4>Languages & Cloud</h4>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Core Languages</span></div>
+                                <div class="skill-context">C, C++, Java, Python, R, SQL</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Cloud Foundations</span></div>
+                                <div class="skill-context">AWS Academy Graduate, Google Cloud AI Agents series</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name-row"><span>Linux & Git</span></div>
+                                <div class="skill-context">Bash CLI, Git version control, deployment on Vercel & Render
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Roadmap -->
+                <div class="roadmap-banner">
+                    <div class="roadmap-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="roadmap-content">
+                        <h5>Current Growth Vector: Data Analytics Specialization</h5>
+                        <p>
+                            Currently deepening my command of advanced SQL (Window functions, Common Table Expressions,
+                            query optimization), alongside pandas and NumPy for deep EDA, paired with Power BI to
+                            deliver
+                            executive-ready business intelligence dashboards.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================================================
              CERTIFICATIONS & ACADEMIC BACKGROUND
              ========================================================================== -->
-        <section id="credentials">
-            <div class="section-header">
-                <div class="section-eyebrow">Credentials & Milestones</div>
-                <h2 class="section-title">Verified certifications and education.</h2>
-                <p class="section-desc">
-                    Issued by recognized industry leaders, each representing verified hours and hands-on examinations.
-                </p>
-            </div>
+            <section id="credentials">
+                <div class="section-header">
+                    <div class="section-eyebrow">Credentials & Milestones</div>
+                    <h2 class="section-title">Verified certifications and education.</h2>
+                    <p class="section-desc">
+                        Issued by recognized industry leaders, each representing verified hours and hands-on
+                        examinations.
+                    </p>
+                </div>
 
                 <div class="deck-container certs-deck-container" id="certs-deck" aria-label="Certifications Deck">
-                <div class="deck-cards" id="certs">
-                    <!-- 1. SQL (Basic) Skill Certification -->
-                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="0">
-                        <div class="deck-card-inner cert-card-inner">
-                            <div class="cert-info">
-                                <div class="cert-header-row">
-                                    <div class="cert-title">SQL (Basic)</div>
-                                    <span class="cert-view-badge">View ↗</span>
+                    <div class="deck-cards" id="certs">
+                        <!-- 1. SQL (Basic) Skill Certification -->
+                        <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="0">
+                            <div class="deck-card-inner cert-card-inner">
+                                <div class="cert-info">
+                                    <div class="cert-header-row">
+                                        <div class="cert-title">SQL (Basic)</div>
+                                        <span class="cert-view-badge">View ↗</span>
+                                    </div>
+                                    <div class="cert-issuer">HackerRank</div>
+                                    <div class="cert-skills-tags">
+                                        <span class="cert-tag">Complex Queries</span>
+                                        <span class="cert-tag">Joins</span>
+                                        <span class="cert-tag">Aggregations</span>
+                                    </div>
                                 </div>
-                                <div class="cert-issuer">HackerRank</div>
-                                <div class="cert-skills-tags">
-                                    <span class="cert-tag">Complex Queries</span>
-                                    <span class="cert-tag">Joins</span>
-                                    <span class="cert-tag">Aggregations</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. AWS Academy Cloud Foundations (Pending) -->
+                        <div class="cert-card cert-card-pending deck-card" data-deck-type="certificate"
+                            data-deck-index="1">
+                            <div class="deck-card-inner cert-card-inner">
+                                <div class="cert-info">
+                                    <div class="cert-header-row">
+                                        <div class="cert-title">AWS Academy Cloud Foundations</div>
+                                        <span class="cert-pending-badge"
+                                            title="Certificate file not found in certificates/ folder">Pending
+                                            file</span>
+                                    </div>
+                                    <div class="cert-issuer">Amazon Web Services (AWS)</div>
+                                    <div class="cert-skills-tags">
+                                        <span class="cert-tag">Cloud Architecture</span>
+                                        <span class="cert-tag">Core Services</span>
+                                        <span class="cert-tag">Security &amp; Pricing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Google Cloud Computing Foundations (Pending) -->
+                        <div class="cert-card cert-card-pending deck-card" data-deck-type="certificate"
+                            data-deck-index="2">
+                            <div class="deck-card-inner cert-card-inner">
+                                <div class="cert-info">
+                                    <div class="cert-header-row">
+                                        <div class="cert-title">Google Cloud Computing Foundations</div>
+                                        <span class="cert-pending-badge"
+                                            title="Certificate file not found in certificates/ folder">Pending
+                                            file</span>
+                                    </div>
+                                    <div class="cert-issuer">Google Cloud</div>
+                                    <div class="cert-skills-tags">
+                                        <span class="cert-tag">AI Agents</span>
+                                        <span class="cert-tag">Gemini API</span>
+                                        <span class="cert-tag">Cloud Orchestration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Introduction to Networks -->
+                        <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="3">
+                            <div class="deck-card-inner cert-card-inner">
+                                <div class="cert-info">
+                                    <div class="cert-header-row">
+                                        <div class="cert-title">Introduction to Networks</div>
+                                        <span class="cert-view-badge">View ↗</span>
+                                    </div>
+                                    <div class="cert-issuer">Cisco Networking Academy</div>
+                                    <div class="cert-skills-tags">
+                                        <span class="cert-tag">IPv4/IPv6</span>
+                                        <span class="cert-tag">Subnetting</span>
+                                        <span class="cert-tag">OSI Model</span>
+                                        <span class="cert-tag">Network Security</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Introduction to IoT -->
+                        <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="4">
+                            <div class="deck-card-inner cert-card-inner">
+                                <div class="cert-info">
+                                    <div class="cert-header-row">
+                                        <div class="cert-title">Introduction to IoT</div>
+                                        <span class="cert-view-badge">View ↗</span>
+                                    </div>
+                                    <div class="cert-issuer">Cisco Networking Academy</div>
+                                    <div class="cert-skills-tags">
+                                        <span class="cert-tag">Sensors</span>
+                                        <span class="cert-tag">Automation</span>
+                                        <span class="cert-tag">Edge Computing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Vadodara Hackathon 6.0 -->
+                        <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="5">
+                            <div class="deck-card-inner cert-card-inner">
+                                <div class="cert-info">
+                                    <div class="cert-header-row">
+                                        <div class="cert-title">Vadodara Hackathon 6.0</div>
+                                        <span class="cert-view-badge">View ↗</span>
+                                    </div>
+                                    <div class="cert-issuer">Parul University</div>
+                                    <div class="cert-skills-tags">
+                                        <span class="cert-tag">Rapid Prototyping</span>
+                                        <span class="cert-tag">Team Collaboration</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Stack Overlay Button -->
+                    <button type="button" class="deck-stack-overlay" id="certs-deck-overlay"
+                        aria-label="View all certificates">
+                        <span class="deck-overlay-content">
+                            <span class="deck-overlay-title">Certificates</span>
+                            <span class="deck-overlay-hint">Click to view all ↗</span>
+                        </span>
+                    </button>
+                </div>
 
-                    <!-- 2. AWS Academy Cloud Foundations (Pending) -->
-                    <div class="cert-card cert-card-pending deck-card" data-deck-type="certificate" data-deck-index="1">
-                        <div class="deck-card-inner cert-card-inner">
-                            <div class="cert-info">
-                                <div class="cert-header-row">
-                                    <div class="cert-title">AWS Academy Cloud Foundations</div>
-                                    <span class="cert-pending-badge" title="Certificate file not found in certificates/ folder">Pending file</span>
-                                </div>
-                                <div class="cert-issuer">Amazon Web Services (AWS)</div>
-                                <div class="cert-skills-tags">
-                                    <span class="cert-tag">Cloud Architecture</span>
-                                    <span class="cert-tag">Core Services</span>
-                                    <span class="cert-tag">Security &amp; Pricing</span>
-                                </div>
+                <!-- Education Journey Card -->
+                <div class="education-wrap">
+                    <div class="section-eyebrow education-eyebrow">Academic Foundation</div>
+                    <h3
+                        style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">
+                        Education & Background</h3>
+                    <p class="education-subtext">Consistent academic track record from Nepal to Gujarat, India.</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023 – 2027 (Expected)</div>
+                            <div class="timeline-title">Bachelor of Technology (B.Tech) in Computer Science &
+                                Engineering
+                            </div>
+                            <div class="timeline-institution">Parul Institute of Engineering and Technology, Vadodara,
+                                Gujarat</div>
+                            <div class="timeline-details">
+                                Cumulative GPA: <strong>3.48 / 4.0</strong>. Focus areas include Data Structures &
+                                Algorithms, Database Management Systems, Cloud Computing, and Machine Learning. Active
+                                participant in technical hackathons and competitive developer challenges.
                             </div>
                         </div>
-                    </div>
 
-                    <!-- 3. Google Cloud Computing Foundations (Pending) -->
-                    <div class="cert-card cert-card-pending deck-card" data-deck-type="certificate" data-deck-index="2">
-                        <div class="deck-card-inner cert-card-inner">
-                            <div class="cert-info">
-                                <div class="cert-header-row">
-                                    <div class="cert-title">Google Cloud Computing Foundations</div>
-                                    <span class="cert-pending-badge" title="Certificate file not found in certificates/ folder">Pending file</span>
-                                </div>
-                                <div class="cert-issuer">Google Cloud</div>
-                                <div class="cert-skills-tags">
-                                    <span class="cert-tag">AI Agents</span>
-                                    <span class="cert-tag">Gemini API</span>
-                                    <span class="cert-tag">Cloud Orchestration</span>
-                                </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021 – 2023</div>
+                            <div class="timeline-title">School Leaving Certificate (Grade XII), Science</div>
+                            <div class="timeline-institution">Arniko Awasiya Secondary School, Biratnagar, Morang, Nepal
+                            </div>
+                            <div class="timeline-details">
+                                Physics, Mathematics, and Computer Science coursework. Developed strong problem-solving
+                                fundamentals.
                             </div>
                         </div>
-                    </div>
 
-                    <!-- 4. Introduction to Networks -->
-                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="3">
-                        <div class="deck-card-inner cert-card-inner">
-                            <div class="cert-info">
-                                <div class="cert-header-row">
-                                    <div class="cert-title">Introduction to Networks</div>
-                                    <span class="cert-view-badge">View ↗</span>
-                                </div>
-                                <div class="cert-issuer">Cisco Networking Academy</div>
-                                <div class="cert-skills-tags">
-                                    <span class="cert-tag">IPv4/IPv6</span>
-                                    <span class="cert-tag">Subnetting</span>
-                                    <span class="cert-tag">OSI Model</span>
-                                    <span class="cert-tag">Network Security</span>
-                                </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <div class="timeline-title">Secondary Education Examination (Grade X)</div>
+                            <div class="timeline-institution">Lotus English Boarding School, Lahan-8, Siraha, Nepal
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- 5. Introduction to IoT -->
-                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="4">
-                        <div class="deck-card-inner cert-card-inner">
-                            <div class="cert-info">
-                                <div class="cert-header-row">
-                                    <div class="cert-title">Introduction to IoT</div>
-                                    <span class="cert-view-badge">View ↗</span>
-                                </div>
-                                <div class="cert-issuer">Cisco Networking Academy</div>
-                                <div class="cert-skills-tags">
-                                    <span class="cert-tag">Sensors</span>
-                                    <span class="cert-tag">Automation</span>
-                                    <span class="cert-tag">Edge Computing</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 6. Vadodara Hackathon 6.0 -->
-                    <div class="cert-card deck-card" data-deck-type="certificate" data-deck-index="5">
-                        <div class="deck-card-inner cert-card-inner">
-                            <div class="cert-info">
-                                <div class="cert-header-row">
-                                    <div class="cert-title">Vadodara Hackathon 6.0</div>
-                                    <span class="cert-view-badge">View ↗</span>
-                                </div>
-                                <div class="cert-issuer">Parul University</div>
-                                <div class="cert-skills-tags">
-                                    <span class="cert-tag">Rapid Prototyping</span>
-                                    <span class="cert-tag">Team Collaboration</span>
-                                </div>
+                            <div class="timeline-details">
+                                Graduated with high distinction. Active leader in school science exhibitions.
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Stack Overlay Button -->
-                <button type="button" class="deck-stack-overlay" id="certs-deck-overlay" aria-label="View all certificates">
-                    <span class="deck-overlay-content">
-                        <span class="deck-overlay-title">Certificates</span>
-                        <span class="deck-overlay-hint">Click to view all ↗</span>
-                    </span>
-                </button>
-            </div>
+            </section>
 
-            <!-- Education Journey Card -->
-            <div class="education-wrap">
-                <div class="section-eyebrow education-eyebrow">Academic Foundation</div>
-                <h3
-                    style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">
-                    Education & Background</h3>
-                <p class="education-subtext">Consistent academic track record from Nepal to Gujarat, India.</p>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023 – 2027 (Expected)</div>
-                        <div class="timeline-title">Bachelor of Technology (B.Tech) in Computer Science & Engineering
-                        </div>
-                        <div class="timeline-institution">Parul Institute of Engineering and Technology, Vadodara,
-                            Gujarat</div>
-                        <div class="timeline-details">
-                            Cumulative GPA: <strong>3.48 / 4.0</strong>. Focus areas include Data Structures &
-                            Algorithms, Database Management Systems, Cloud Computing, and Machine Learning. Active
-                            participant in technical hackathons and competitive developer challenges.
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2021 – 2023</div>
-                        <div class="timeline-title">School Leaving Certificate (Grade XII), Science</div>
-                        <div class="timeline-institution">Arniko Awasiya Secondary School, Biratnagar, Morang, Nepal
-                        </div>
-                        <div class="timeline-details">
-                            Physics, Mathematics, and Computer Science coursework. Developed strong problem-solving
-                            fundamentals.
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2021</div>
-                        <div class="timeline-title">Secondary Education Examination (Grade X)</div>
-                        <div class="timeline-institution">Lotus English Boarding School, Lahan-8, Siraha, Nepal</div>
-                        <div class="timeline-details">
-                            Graduated with high distinction. Active leader in school science exhibitions.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
+            <!-- ==========================================================================
              CONTACT & CALL TO ACTION
              ========================================================================== -->
-        <section id="contact">
-            <div class="contact-card">
-                <div class="contact-content">
-                    <div class="contact-eyebrow">Available for Opportunities</div>
-                    <h2>Let’s build something impactful together.</h2>
-                    <p>
-                        I’m currently seeking a <strong>remote or on-site Data Analytics / Software Engineering
-                            internship</strong>. If you value an engineer who understands data schemas, writes clean
-                        code, and actually ships production apps, I’d love to connect.
-                    </p>
+            <section id="contact">
+                <div class="contact-card">
+                    <div class="contact-content">
+                        <div class="contact-eyebrow">Available for Opportunities</div>
+                        <h2>Let’s build something impactful together.</h2>
+                        <p>
+                            I’m currently seeking a <strong>remote or on-site Data Analytics / Software Engineering
+                                internship</strong>. If you value an engineer who understands data schemas, writes clean
+                            code, and actually ships production apps, I’d love to connect.
+                        </p>
 
-                    <div class="contact-button-row">
-                        <a href="mailto:musugu2005@gmail.com" class="btn btn-primary contact-btn-sized">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span>musugu2005@gmail.com</span>
-                        </a>
+                        <div class="contact-button-row">
+                            <a href="mailto:musugu2005@gmail.com" class="btn btn-primary contact-btn-sized">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>musugu2005@gmail.com</span>
+                            </a>
 
-                        <button class="btn btn-secondary contact-btn-secondary-sized" data-action="copy-email">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-                            </svg>
-                            <span>Copy Email</span>
-                        </button>
+                            <button class="btn btn-secondary contact-btn-secondary-sized" data-action="copy-email">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                                </svg>
+                                <span>Copy Email</span>
+                            </button>
 
-                        <a href="https://linkedin.com/in/mushkan-gupta-337a4028a" target="_blank" rel="noopener"
-                            class="btn btn-secondary contact-btn-secondary-sized">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
+                            <a href="https://linkedin.com/in/mushkan-gupta-337a4028a" target="_blank" rel="noopener"
+                                class="btn btn-secondary contact-btn-secondary-sized">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
 
-                        <a href="actual_Mushkan_Gupta_Resume.pdf" target="_blank"
-                            class="btn btn-secondary contact-btn-secondary-sized">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            <span>Download Resume (PDF)</span>
-                        </a>
+                            <a href="actual_Mushkan_Gupta_Resume.pdf" target="_blank"
+                                class="btn btn-secondary contact-btn-secondary-sized">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>Download Resume (PDF)</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="wrap footer-inner">
-            <div class="footer-left">
-                <div class="footer-brand">© 2026 Mushkan Gupta · Crafted with care</div>
-                <div>Vadodara, Gujarat · Origin: Lahan & Biratnagar, Nepal · English, Hindi, Nepali</div>
-            </div>
-
-            <div class="footer-right">
-                <div class="live-clock-pill" title="Current time in Vadodara, India (IST)">
-                    <span class="pulse-green"></span>
-                    <span>Vadodara (IST): </span>
-                    <strong id="live-ist-clock">--:--:--</strong>
+        <!-- Footer -->
+        <footer>
+            <div class="wrap footer-inner">
+                <div class="footer-left">
+                    <div class="footer-brand">© 2026 Mushkan Gupta · Crafted with care</div>
+                    <div>Vadodara, Gujarat · Origin: Lahan & Biratnagar, Nepal · English, Hindi, Nepali</div>
                 </div>
 
-                <a href="#" class="frame-link">Back to Top ↑</a>
-            </div>
-        </div>
-    </footer>
+                <div class="footer-right">
+                    <div class="live-clock-pill" title="Current time in Vadodara, India (IST)">
+                        <span class="pulse-green"></span>
+                        <span>Vadodara (IST): </span>
+                        <strong id="live-ist-clock">--:--:--</strong>
+                    </div>
 
-    <!-- Toast Notification Element -->
-    <div id="toast" role="status" aria-live="polite">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-        <span id="toast-msg">Email copied to clipboard!</span>
-    </div>
+                    <a href="#" class="frame-link">Back to Top ↑</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Toast Notification Element -->
+        <div id="toast" role="status" aria-live="polite">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span id="toast-msg">Email copied to clipboard!</span>
+        </div>
     </div> <!-- /#site-wrapper -->
 
     <!-- ==========================================================================
          AI CHAT WIDGET ("Ask about Mushkan")
          ========================================================================== -->
     <div id="chat-widget-root">
-    <div id="mg-chat-widget" class="mg-chat-widget">
-        <!-- Floating Round Launcher Button -->
-        <button id="mg-chat-toggle" class="mg-chat-toggle" aria-label="Ask about Mushkan" aria-expanded="false"
-            aria-controls="mg-chat-panel">
-            <span class="mg-chat-toggle-icon" id="mg-toggle-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </span>
-            <span id="mg-toggle-text">Ask about Mushkan</span>
-            <span class="mg-chat-unread-dot" id="mg-unread-dot" aria-hidden="true"></span>
-        </button>
-
-        <!-- Floating Chat Panel Dialog -->
-        <div id="mg-chat-panel" class="mg-chat-panel" role="dialog" aria-label="Ask about Mushkan AI Chat"
-            aria-hidden="true">
-            <!-- Header -->
-            <div class="mg-chat-header">
-                <div class="mg-chat-header-info">
-                    <div class="mg-chat-avatar">
-                        <span>MG</span>
-                        <span class="mg-status-indicator" title="AI Assistant Online"></span>
-                    </div>
-                    <div>
-                        <h3 class="mg-chat-title">Ask about Mushkan</h3>
-                        <p class="mg-chat-subtitle">Verified Portfolio Assistant</p>
-                    </div>
-                </div>
-                <button id="mg-chat-close" class="mg-chat-close-btn" aria-label="Close chat panel">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
+        <div id="mg-chat-widget" class="mg-chat-widget">
+            <!-- Floating Round Launcher Button -->
+            <button id="mg-chat-toggle" class="mg-chat-toggle" aria-label="Ask about Mushkan" aria-expanded="false"
+                aria-controls="mg-chat-panel">
+                <span class="mg-chat-toggle-icon" id="mg-toggle-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                     </svg>
-                </button>
-            </div>
+                </span>
+                <span id="mg-toggle-text">Ask about Mushkan</span>
+                <span class="mg-chat-unread-dot" id="mg-unread-dot" aria-hidden="true"></span>
+            </button>
 
-            <!-- Messages Area -->
-            <div id="mg-chat-messages" class="mg-chat-messages" role="log" aria-live="polite" aria-atomic="false">
-                <!-- Greeting message -->
-                <div class="mg-msg mg-msg-assistant">
-                    <div class="mg-msg-bubble">
-                        <p>Hi! 👋 I'm Mushkan's portfolio AI assistant. Ask me anything about her projects, technical
-                            skills, education, or internship availability.</p>
+            <!-- Floating Chat Panel Dialog -->
+            <div id="mg-chat-panel" class="mg-chat-panel" role="dialog" aria-label="Ask about Mushkan AI Chat"
+                aria-hidden="true">
+                <!-- Header -->
+                <div class="mg-chat-header">
+                    <div class="mg-chat-header-info">
+                        <div class="mg-chat-avatar">
+                            <span>MG</span>
+                            <span class="mg-status-indicator" title="AI Assistant Online"></span>
+                        </div>
+                        <div>
+                            <h3 class="mg-chat-title">Ask about Mushkan</h3>
+                            <p class="mg-chat-subtitle">Verified Portfolio Assistant</p>
+                        </div>
                     </div>
-                    <span class="mg-msg-time">Portfolio Assistant</span>
-                </div>
-
-                <!-- 4 Suggested Question Chips -->
-                <div class="mg-suggested-chips" id="mg-suggested-chips">
-                    <div class="mg-chips-label">Suggested questions:</div>
-                    <div class="mg-chips-grid">
-                        <button type="button" class="mg-chip" data-question="What projects has she built?">What projects
-                            has she built?</button>
-                        <button type="button" class="mg-chip" data-question="What are her skills?">What are her
-                            skills?</button>
-                        <button type="button" class="mg-chip" data-question="Is she open to internships?">Is she open to
-                            internships?</button>
-                        <button type="button" class="mg-chip" data-question="Show me her certificates">Show me her
-                            certificates</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Typing Indicator -->
-            <div id="mg-chat-typing" class="mg-chat-typing" aria-hidden="true">
-                <span class="mg-typing-dot"></span>
-                <span class="mg-typing-dot"></span>
-                <span class="mg-typing-dot"></span>
-                <span class="mg-typing-label">Consulting knowledge base...</span>
-            </div>
-
-            <!-- Input Area Form -->
-            <form id="mg-chat-form" class="mg-chat-input-form">
-                <div class="mg-chat-input-wrap">
-                    <textarea id="mg-chat-input" class="mg-chat-input"
-                        placeholder="Ask a question about Mushkan... (Enter to send)" rows="1" maxlength="500"
-                        aria-label="Ask a question about Mushkan"></textarea>
-                    <button type="button" id="mg-chat-send" class="mg-chat-send-btn" aria-label="Send message" disabled>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    <button id="mg-chat-close" class="mg-chat-close-btn" aria-label="Close chat panel">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
                     </button>
                 </div>
-                <div class="mg-chat-footer-note">
-                    Press Enter to send · Esc to close
+
+                <!-- Messages Area -->
+                <div id="mg-chat-messages" class="mg-chat-messages" role="log" aria-live="polite" aria-atomic="false">
+                    <!-- Greeting message -->
+                    <div class="mg-msg mg-msg-assistant">
+                        <div class="mg-msg-bubble">
+                            <p>Hi! 👋 I'm Mushkan's portfolio AI assistant. Ask me anything about her projects,
+                                technical
+                                skills, education, or internship availability.</p>
+                        </div>
+                        <span class="mg-msg-time">Portfolio Assistant</span>
+                    </div>
+
+                    <!-- 4 Suggested Question Chips -->
+                    <div class="mg-suggested-chips" id="mg-suggested-chips">
+                        <div class="mg-chips-label">Suggested questions:</div>
+                        <div class="mg-chips-grid">
+                            <button type="button" class="mg-chip" data-question="What projects has she built?">What
+                                projects
+                                has she built?</button>
+                            <button type="button" class="mg-chip" data-question="What are her skills?">What are her
+                                skills?</button>
+                            <button type="button" class="mg-chip" data-question="Is she open to internships?">Is she
+                                open to
+                                internships?</button>
+                            <button type="button" class="mg-chip" data-question="Show me her certificates">Show me her
+                                certificates</button>
+                        </div>
+                    </div>
                 </div>
-            </form>
+
+                <!-- Typing Indicator -->
+                <div id="mg-chat-typing" class="mg-chat-typing" aria-hidden="true">
+                    <span class="mg-typing-dot"></span>
+                    <span class="mg-typing-dot"></span>
+                    <span class="mg-typing-dot"></span>
+                    <span class="mg-typing-label">Consulting knowledge base...</span>
+                </div>
+
+                <!-- Input Area Form -->
+                <form id="mg-chat-form" class="mg-chat-input-form">
+                    <div class="mg-chat-input-wrap">
+                        <textarea id="mg-chat-input" class="mg-chat-input"
+                            placeholder="Ask a question about Mushkan... (Enter to send)" rows="1" maxlength="500"
+                            aria-label="Ask a question about Mushkan"></textarea>
+                        <button type="button" id="mg-chat-send" class="mg-chat-send-btn" aria-label="Send message"
+                            disabled>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mg-chat-footer-note">
+                        Press Enter to send · Esc to close
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
     </div> <!-- /#chat-widget-root -->
 
     <!-- ==========================================================================
          REUSABLE DECK MODAL (PROJECTS & CERTIFICATES POP-UP)
          ========================================================================== -->
-    <div id="deck-modal" class="deck-modal" role="dialog" aria-modal="true" aria-labelledby="deck-modal-title" aria-hidden="true" inert>
+    <div id="deck-modal" class="deck-modal" role="dialog" aria-modal="true" aria-labelledby="deck-modal-title"
+        aria-hidden="true" inert>
         <div class="deck-modal-backdrop" id="deck-modal-backdrop"></div>
         <div class="deck-modal-dialog">
             <header class="deck-modal-header">
                 <div class="deck-modal-header-left">
-                    <button type="button" class="btn-back-to-grid" id="btn-back-to-grid" aria-label="Back to grid" style="display:none;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    <button type="button" class="btn-back-to-grid" id="btn-back-to-grid" aria-label="Back to grid"
+                        style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
                         <span>Back</span>
                     </button>
                     <span class="deck-modal-title" id="deck-modal-title">Projects</span>
-                    <span class="deck-modal-swipe-hint" id="deck-modal-swipe-hint" style="display:none;">Swipe or use arrow keys to explore</span>
+                    <span class="deck-modal-swipe-hint" id="deck-modal-swipe-hint" style="display:none;">Swipe or use
+                        arrow keys to explore</span>
                 </div>
                 <button type="button" class="deck-modal-close" id="deck-modal-close" aria-label="Close dialog (Esc)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
                 </button>
             </header>
             <!-- Level 1: Grid view -->
@@ -1096,7 +1173,8 @@
             </div>
             <!-- Level 2: Detail carousel view -->
             <div class="deck-modal-detail-wrap" id="deck-modal-detail-wrap" style="display:none;">
-                <div class="deck-modal-track" id="deck-modal-track" tabindex="0" role="region" aria-label="Deck items carousel">
+                <div class="deck-modal-track" id="deck-modal-track" tabindex="0" role="region"
+                    aria-label="Deck items carousel">
                     <!-- Dynamically populated by js/main.js -->
                 </div>
                 <footer class="deck-modal-footer">
@@ -1112,4 +1190,5 @@
     <script src="js/main.js" defer></script>
     <script src="js/chat.js" defer></script>
 </body>
+
 </html>
